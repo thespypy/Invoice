@@ -1,0 +1,993 @@
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+}
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; 
+    }
+    body { 
+    background-color: #f8f9fa; 
+    /* padding: 1rem;  */
+    line-height: 1.5; 
+    }
+    .container { 
+        max-width: 900px; 
+        margin: 0 auto; 
+        background-color: white; 
+        padding: 1.5rem; 
+        border-radius: 8px; 
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); 
+    }
+    header{
+        display: flex;
+        background-color: #ff0000;
+        justify-content: space-around;
+        align-items: center;
+        height: 5rem;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+    
+    header .logo{
+        display: flex;
+        
+    }
+    header img{
+        width: 30px;
+        height: 30px;
+    }
+    header h1{
+        color: white;
+    }
+    header div a{
+        line-height: 1;
+        text-decoration: none;
+        margin: 10px;
+        color: white;
+        padding: 2px;
+    }
+    header div a:hover{
+        /* text-decoration: underline; */
+        border-bottom: 1px solid white;
+    }
+    header div a:focus{
+        /* text-decoration: underline; */
+        border-bottom: 1px solid white;
+    }
+    .page1{
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+        display: flex;
+        justify-content: space-around;
+    }
+    .page1 .left{
+        height: 32rem;
+
+    }
+    .page1 .heading h1{
+        margin-top: 3rem;
+        margin-left: 3rem;
+        /* font-family: Arial, Helvetica, sans-serif; */
+        font-size: 50px;
+        font-weight: bold;
+    }
+    .page1 .heading2 h4{
+        margin-top: 1rem;
+        margin-left: 3rem;
+        width: 33rem;
+    }
+    .page1 .creatbtn{
+        margin-top: 2rem;
+        margin-left: 3rem;
+        background-color: #2e2e2e;
+        color: white;
+        display: inline-block;
+        padding: 15px;
+        border-radius: 70px;
+    }
+    .page1 .creatbtn a{
+        text-decoration: none;
+        color: white;
+    }
+    .page1 .creatbtn:hover{
+        background-color: #000000;
+        transition: .4s;
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+    .page1 .right{
+        margin-top: 5rem;
+    }
+    .page1 .right img{
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+        border-radius: 30px;
+        margin-right: 3rem;
+        width: 500px;
+        height: 350px;
+    }
+    .header { 
+        text-align: center; 
+        margin-bottom: 1.5rem; 
+        padding-bottom: 1rem; 
+        border-bottom: 1px solid #eee; 
+    }
+    .header h1 { 
+        font-size: 2rem; 
+        font-weight: 700; 
+        color: #111; 
+        margin-bottom: 0.5rem; 
+        letter-spacing: -0.5px; 
+    }
+    .date-info { 
+        color: #666; 
+        margin-bottom: 0.5rem; 
+    }
+    .billing-info { 
+        display: grid; 
+        grid-template-columns: 1fr 1fr; 
+        gap: 1rem; 
+        margin-bottom: 1rem; 
+    }
+    .billing-section h2 { 
+        color: #666; 
+        margin-bottom: 0.5rem; 
+    }
+    .input-group { 
+        margin-bottom: 0.75rem; 
+    }
+    input, textarea, select { 
+        width: 100%; 
+        padding: 0.625rem; 
+        border: 1px solid #eee; 
+        border-radius: 4px; 
+        outline: none; 
+        transition: all 0.2s ease; 
+        background: #fff; 
+    }
+    input:focus, textarea:focus, select:focus { 
+        border-color: #111; 
+        box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.1); 
+    }
+    textarea { 
+        resize: vertical; 
+        min-height: 50px; 
+    }
+    
+    /* Responsive table styles */
+    .table-responsive {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    
+    table { 
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px solid #eee;
+    }
+    
+    th { 
+        background-color: #111; 
+        color: white; 
+        padding: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+    }
+    
+    td { 
+        padding: 0.75rem;
+        border-bottom: 1px solid #eee;
+        background: white;
+    }
+    
+    tr:hover td {
+        background-color: #fafafa;
+    }
+    
+    td:first-child {
+        width: 40%;
+    }
+    
+    td:nth-child(2),
+    td:nth-child(3),
+    td:nth-child(4) {
+        width: 15%;
+    }
+    
+    td:last-child {
+        width: 10%;
+    }
+    
+    .table-input { 
+        background: transparent; 
+        width: 100%;
+        word-wrap: break-word;
+        white-space: pre-wrap;
+    }
+    
+    tr:nth-child(even) { 
+        background-color: #f9f9f9; 
+    }
+    .button { 
+        background-color: #111; 
+        color: white; 
+        padding: 0.625rem 1.25rem; 
+        border: none; 
+        cursor: pointer; 
+        transition: all 0.2s ease; 
+        min-width: 120px; 
+        position: relative; 
+        overflow: hidden; 
+        border-radius: 6px; 
+        font-weight: 500; 
+        letter-spacing: 0.3px; 
+    }
+    .button:hover { 
+        background-color: #333; 
+        transform: translateY(-1px); 
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+    }
+    .button.outline { 
+        background-color: transparent; 
+        border: 2px solid #111; 
+        color: #111; 
+    }
+    .button.outline:hover { 
+        background-color: #111; 
+        color: white; 
+    }
+    .table-actions { 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: flex-start; 
+        margin-bottom: 1rem; 
+        flex-wrap: wrap; 
+        gap: 1rem; 
+    }
+    .total-section { 
+        background: #f8f9fa; 
+        padding: 1rem; 
+        border-radius: 8px; 
+        border: 1px solid #eee; 
+        margin-top: 0.75rem; 
+    }
+    .tax-settings { 
+        background-color: #f9f9f9; 
+        padding: 0.75rem; 
+        border-radius: 4px; 
+        margin-bottom: 0.5rem; 
+    }
+    .total-display { 
+        background: #111; 
+        padding: 1rem; 
+        border-radius: 6px; 
+        color: white; 
+        margin-top: 0.75rem; 
+    }
+    .total-display #totalAmount, #totalPreview { 
+        font-size: 1.5rem; 
+        color: #fff; 
+    }
+    .footer { 
+        text-align: center; 
+        margin-top: 1.5rem; 
+        padding-top: 0.75rem; 
+        border-top: 1px solid #eee; 
+    }
+    .footer p { 
+        font-family: Georgia, serif; 
+        font-size: 1.25rem; 
+        margin-bottom: 0.5rem; 
+    }
+    .social-buttons { 
+        display: flex; 
+        justify-content: center; 
+        gap: 1rem; 
+        margin-bottom: 1rem; 
+        flex-wrap: wrap; 
+    }
+    .social-button { 
+        background: none; 
+        border: none; 
+        cursor: pointer; 
+        padding: 0.5rem; 
+        color: #111; 
+    }
+    .delete-button { 
+        background: none; 
+        border: none; 
+        cursor: pointer; 
+        color: #666; 
+        padding: 0.5rem; 
+    }
+    .delete-button:hover { 
+        color: #111; 
+    }
+    .terms-conditions { 
+        margin: 1rem 0; 
+    }
+    .terms-conditions input { 
+        width: 100%; 
+        padding: 0.75rem; 
+        border: 1px solid #ddd; 
+        margin-top: 0.5rem; 
+    }
+
+    .currency-selector { 
+        margin: 0.5rem 0; 
+        width: 180px; }
+
+    @media (max-width: 768px) { 
+        .billing-info { 
+            grid-template-columns: 1fr; 
+            gap: 0.75rem; 
+        }
+        .container {
+            padding: 1rem;
+        }
+        .total-display {
+            padding: 0.75rem;
+            font-size: 1.1rem;
+        }
+        .table-actions {
+            flex-direction: column;
+            align-items: stretch;
+        }
+        
+        table {
+            font-size: 14px;
+        }
+        
+        td, th {
+            padding: 0.5rem;
+        }
+        
+        td:first-child {
+            width: 35%;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .container {
+            padding: 0.5rem;
+        }
+        .header h1 {
+            font-size: 1.75rem;
+        }
+        .button {
+            width: 100%;
+            margin-bottom: 0.5rem;
+        }
+        
+        td:first-child {
+            width: 30%;
+        }
+        
+        td:nth-child(2),
+        td:nth-child(3),
+        td:nth-child(4) {
+            width: 20%;
+        }
+        
+        td:last-child {
+            width: 10%;
+        }
+    }
+    
+    #invoicePreview {
+        background-color: white;
+        padding: 30px;
+        margin: 1rem auto;
+        max-width: 900px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .invoice-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .invoice-title {
+        font-size: 2rem;
+        font-family: Georgia, serif;
+    }
+    
+    .address-block {
+        margin-bottom: 1rem;
+    }
+    
+    .address-block h3 {
+        color: #666;
+        margin-bottom: 0.5rem;
+    }
+    
+    .thank-you-note {
+        text-align: center;
+        margin: 1rem 0;
+    }
+
+    .logo-upload {
+        margin-bottom: 0.5rem;
+        text-align: center;
+    }
+
+    .logo-preview {
+        max-width: 180px;
+        max-height: 90px;
+        margin: 0.5rem 0;
+    }
+    
+    @media print {
+        body * {
+            visibility: hidden;
+        }
+        #invoicePreview, #invoicePreview * {
+            visibility: visible;
+        }
+        #invoicePreview {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+        }
+        .no-print {
+            display: none;
+        }
+    }
+
+    /* New styles for SEO improvements */
+    .features-section {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+    .features-section h2 {
+font-size: 1.2rem;
+margin-bottom: 0.75rem;
+color: #333;
+text-align: center;
+}
+    .features-list {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem;
+        margin-top: 1rem;
+        font-size: 0.75rem;;
+    }
+    .features-list li {
+        background-color: #f0f0f0;
+        padding: 0.75rem 1rem;
+        border-radius: 4px;
+        font-size: 0.9rem;
+    }
+    .faq-section {
+        margin: 1.5rem 0;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .faq-section h2 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        color: #333;
+        text-align: center;
+        font-weight: 600;
+    }
+
+    .faq-section details {
+        margin-bottom: 0.5rem;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        background: white;
+    }
+
+    .faq-section details:hover {
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .faq-section summary {
+        padding: 0.75rem 1rem;
+        cursor: pointer;
+        position: relative;
+        font-weight: 500;
+        font-size: 0.9rem;
+        color: #444;
+        background: #f8f9fa;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .faq-section summary::after {
+        content: '+';
+        font-size: 1.2rem;
+        color: #666;
+        transition: transform 0.3s ease;
+    }
+
+    .faq-section details[open] summary::after {
+        transform: rotate(45deg);
+    }
+
+    .faq-section details p {
+        padding: 0.75rem 1rem;
+        margin: 0;
+        font-size: 0.85rem;
+        color: #666;
+        line-height: 1.5;
+        border-top: 1px solid #eee;
+    }
+
+    .button {
+        background-color: #2563eb;
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 500;
+        font-size: 0.9rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        box-shadow: 0 2px 4px rgba(37, 99, 235, 0.1);
+    }
+
+    .button:hover {
+        background-color: #1d4ed8;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
+    }
+
+    .button.outline {
+        background-color: transparent;
+        border: 2px solid #2563eb;
+        color: #2563eb;
+    }
+
+    .button.outline:hover {
+        background-color: #2563eb;
+        color: white;
+    }
+
+    .button-group {
+        display: flex;
+        gap: 0.75rem;
+        justify-content: center;
+        margin: 1rem 0;
+    }
+
+    @media (max-width: 768px) {
+        .button {
+            width: 100%;
+        }
+        
+        .button-group {
+            flex-direction: column;
+        }
+        
+        .faq-section {
+            padding: 0 1rem;
+        }
+    }
+
+    footer {
+        margin-top: 2rem;
+        text-align: center;
+        padding: 1rem;
+        background-color: #f0f0f0;
+    }
+    .footer-links {
+        margin-top: 1rem;
+    }
+    .footer-links a {
+        margin: 0 0.5rem;
+        color: #333;
+        text-decoration: none;
+    }
+    .footer-links a:hover {
+        text-decoration: underline;
+    }
+
+    /* Added CSS for invoice details */
+    .invoice-details {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .invoice-details .input-group {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .invoice-details label {
+        font-size: 0.875rem;
+        color: #666;
+        margin-bottom: 0.25rem;
+    }
+
+    .invoice-details input {
+        padding: 0.5rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+
+    /* Add after header section (around line 366) */
+    .ad-container.ad-banner-top {
+        margin-bottom: 2rem;
+    }
+    .ad-container.ad-banner-top .ad-label {
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+    .ad-container.ad-banner-top .ad-space {
+        background-color: #f0f0f0;
+        padding: 1rem;
+        border-radius: 4px;
+    }
+
+    /* Add before features section (around line 367) */
+    .ad-container.ad-native {
+        margin-bottom: 2rem;
+    }
+    .ad-container.ad-native .ad-label {
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+    .ad-container.ad-native .ad-space {
+        background-color: #f0f0f0;
+        padding: 1rem;
+        border-radius: 4px;
+    }
+
+    /* Add after the invoice form, before FAQ section (around line 547) */
+    .ad-container.ad-banner-middle {
+        margin-bottom: 2rem;
+    }
+    .ad-container.ad-banner-middle .ad-label {
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+    .ad-container.ad-banner-middle .ad-space {
+        background-color: #f0f0f0;
+        padding: 1rem;
+        border-radius: 4px;
+    }
+
+    /* Add floating sidebar ad (after container div) */
+    .ad-container.ad-sidebar {
+        margin-top: 2rem;
+    }
+    .ad-container.ad-sidebar .ad-label {
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+    .ad-container.ad-sidebar .ad-space {
+        background-color: #f0f0f0;
+        padding: 1rem;
+        border-radius: 4px;
+    }
+
+    /* Ad Container Styles */
+    .ad-container {
+        margin: 20px auto;
+        text-align: center;
+        max-width: 100%;
+        overflow: hidden;
+        background: #f9f9f9;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+    }
+
+    .ad-label {
+        font-size: 12px;
+        color: #666;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 4px;
+        background: #eee;
+    }
+
+    .ad-space {
+        min-height: 90px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    /* Top Banner Ad */
+    .ad-banner-top {
+        max-width: 728px;
+        margin: 20px auto;
+    }
+
+    /* Native Ad */
+    .ad-native {
+        max-width: 728px;
+        margin: 30px auto;
+        background: white;
+        border: 1px solid #eee;
+        padding: 15px;
+    }
+
+    /* Sidebar Ad */
+    .ad-sidebar {
+        position: fixed;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 300px;
+        display: none; /* Hidden by default on mobile */
+    }
+
+    /* Middle Banner Ad */
+    .ad-banner-middle {
+        max-width: 728px;
+        margin: 30px auto;
+        background: white;
+    }
+
+    /* Responsive Design */
+    @media (min-width: 1200px) {
+        .ad-sidebar {
+            display: block; /* Show sidebar ad on desktop */
+        }
+        
+        .container {
+            margin-right: 340px; /* Make space for sidebar ad */
+        }
+    }
+
+    @media (max-width: 768px) {
+        .ad-banner-top,
+        .ad-banner-middle,
+        .ad-native {
+            max-width: 100%;
+        }
+        
+        .ad-space {
+            min-height: 60px;
+        }
+    }
+    @media (max-width: 768px) {
+    .features-list {
+        grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .features-list {
+            grid-template-columns: 1fr;
+        }
+
+        .features-section, .faq-section {
+            margin: 1rem 0;
+        }
+    }
+    /* Ad Loading Animation */
+    .ad-space.loading {
+        background: linear-gradient(90deg, #f0f0f0 25%, #f8f8f8 50%, #f0f0f0 75%);
+        background-size: 200% 100%;
+        animation: loadingAnimation 1.5s infinite;
+    }
+
+    @keyframes loadingAnimation {
+        0% { background-position: 200% 0; }
+        100% { background-position: -200% 0; }
+    }
+
+    /* Updated Button Styles */
+    .button {
+        background-color: #111;
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        font-weight: 500;
+        font-size: 0.95rem;
+        letter-spacing: 0.3px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 120px;
+        text-align: center;
+    }
+
+    .button:hover {
+        background-color: #333;
+        transform: translateY(-1px);
+    }
+
+    .button:active {
+        transform: translateY(0);
+    }
+
+    .button.outline {
+        background-color: transparent;
+        border: 1.5px solid #111;
+        color: #111;
+    }
+
+    .button.outline:hover {
+        background-color: #111;
+        color: white;
+    }
+
+    /* Button container styles */
+    .footer {
+        text-align: center;
+        margin-top: 2rem;
+        padding-top: 1rem;
+        border-top: 1px solid #eee;
+    }
+
+    .footer p {
+        color: #666;
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .button-group {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 480px) {
+        .button-group {
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        
+        .button {
+            width: 100%;
+        }
+    }
+
+    /* Reduced spacing and centered header */
+    .header { 
+        text-align: center; 
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #eee;
+    }
+
+    .header h1 { 
+        font-size: 2rem; /* Reduced font size */
+        font-weight: 700;
+        color: #111;
+        margin-bottom: 0.5rem;
+        letter-spacing: -0.5px;
+    }
+
+    /* Reduced spacing in form elements */
+    .billing-info { 
+        display: grid; 
+        grid-template-columns: 1fr 1fr; 
+        gap: 1rem; /* Reduced gap */
+        margin-bottom: 1rem;
+    }
+
+    .input-group { 
+        margin-bottom: 0.75rem; /* Reduced margin */
+    }
+
+    input, textarea, select { 
+        padding: 0.625rem; /* Reduced padding */
+        border: 1px solid #eee;
+        border-radius: 4px;
+    }
+
+    /* Tighter table spacing */
+    table {
+        margin-bottom: 1rem;
+    }
+
+    th, td { 
+        padding: 0.75rem; /* Reduced padding */
+    }
+
+    /* Adjusted button sizes */
+    .button { 
+        padding: 0.625rem 1.25rem; /* Reduced padding */
+        min-width: 120px; /* Reduced min-width */
+    }
+
+    /* Tighter total section */
+    .total-section {
+        padding: 1rem;
+        margin-top: 0.75rem;
+    }
+
+    .total-display {
+        padding: 1rem;
+        margin-top: 0.75rem;
+    }
+
+    /* Reduced feature section spacing */
+    .features-section {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    .features-list {
+        gap: 0.75rem;
+        margin-top: 1rem;
+    }
+
+    .features-list li {
+        padding: 0.75rem 1rem;
+    }
+
+    /* Footer adjustments */
+    .footer {
+        margin-top: 1.5rem;
+        padding-top: 0.75rem;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .container {
+            padding: 1rem;
+        }
+        
+        .header h1 {
+            font-size: 1.75rem;
+        }
+        
+        .billing-info {
+            grid-template-columns: 1fr;
+            gap: 0.75rem;
+        }
+    }
+
+    /* Center align text elements */
+    .header p,
+    .section-title,
+    .total-section h3,
+    .features-section h2 {
+        text-align: center;
+    }
+
+    /* Ensure consistent spacing between sections */
+    .section {
+        margin-bottom: 1.25rem;
+    }
+
+    /* Tighter spacing for mobile */
+    @media (max-width: 480px) {
+        body {
+            padding: 0.5rem;
+        }
+        
+        .container {
+            padding: 0.75rem;
+        }
+        
+        .header {
+            margin-bottom: 1rem;
+        }
+    }
