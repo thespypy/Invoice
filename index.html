@@ -129,7 +129,16 @@
         color: rgb(0, 0, 0);
         display: flex;
         justify-content: space-around;
+        /* transform: translateY(100px); */
+        /* transition: all 1s ease-out; */
+        opacity: 0;
+        transition: opacity 1.5s ease-in-out;
+
     }
+    .page1:hover{
+        opacity: 1;
+    }
+
     .page1 .left{
         height: 32rem;
 
@@ -174,6 +183,10 @@
         margin-right: 3rem;
         width: 500px;
         height: 350px;
+    }
+    .visible{
+        opacity: 1;
+        transform: translateY(0);
     }
     .header { 
         text-align: center; 
@@ -545,13 +558,13 @@ text-align: center;
     }
 
     .faq-section h2 {
+        /* animation: type 1.5s steps(90) 1.5s 1 normal both, cursor 1s step-end infinite; */
         font-size: 2rem;
         margin-top: 5rem;
         color: #333;
         text-align: center;
         font-weight: 600;
     }
-
     .faq-section details {
         margin-top: 2rem;
         border: 1px solid #eee;
@@ -1371,6 +1384,21 @@ text-align: center;
             <p class="p2">© 2024 Free Invoice Generator</p>
         </footer>
         <script>
+
+            const animeText = document.querySelector('.page1');
+
+            const observer = new IntersectionObserver((entries)=> {
+
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    entry.target.classList.add('visible');
+                }
+                else{
+                    entry.target.classList.remove('visible')
+                }
+            });
+            });
+            observer.observe(animeText)
             
         let items = [];
         let logoImage = null;

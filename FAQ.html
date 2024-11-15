@@ -70,6 +70,7 @@
         .top h1{
             text-align: center;
         }
+
         section .steps{
             margin: 5rem 0rem 0rem 10rem;
         }
@@ -86,6 +87,8 @@
             margin: 1.5rem 0;
             max-width: 800px;
             margin: 0 auto;
+            transform: translateY(100px);
+            transition: all 1s ease-out;
     }
 
         .faq-section h2 {
@@ -165,6 +168,10 @@
     footer .p2{
         margin-top: 1rem;
         color: #333;
+    }
+    .visible{
+        opacity: 1;
+        transform: translateY(0);
     }
     </style>
 </head>
@@ -248,5 +255,21 @@
         <p class="p2">© 2024 Free Invoice Generator</p>
     </footer>
     
+    <script>
+        const animeText = document.querySelector('.faq-section');
+
+        const observer = new IntersectionObserver((entries)=> {
+
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.classList.add('visible');
+            }
+            else{
+                entry.target.classList.remove('visible')
+            }
+        });
+        });
+        observer.observe(animeText)
+    </script>
 </body>
 </html>
