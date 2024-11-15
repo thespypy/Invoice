@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Invoice Generator | FAQ</title>
+    <link rel="icon" href="imgs/icon (6).png">
+    
+    <style>
+         html{
+            scroll-behavior: smooth;
+            scroll-padding-top: 5rem;
+        }
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: "Faculty Glyphic", sans-serif; 
+        }
+        body{
+            /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+            font-size: medium;
+            line-height: 1.5;
+
+        }
+        header{
+            display: flex;
+            background-color: #000000;
+            justify-content: space-around;
+            align-items: center;
+            height: 5rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        header .logo{
+            display: flex;
+            
+        }
+        header img{
+            width: 30px;
+            height: 30px;
+        }
+        header h1{
+            color: white;
+        }
+        header div a{
+            line-height: 1;
+            text-decoration: none;
+            margin: 10px;
+            color: white;
+            padding: 2px;
+        }
+        header div a:hover{
+            /* text-decoration: underline; */
+            border-bottom: 1px solid white;
+            transition: .1s ease-in-out;
+        }
+        header div a:focus{
+            /* text-decoration: underline; */
+            border-bottom: 1px solid white;
+        }
+        header div a:active{
+            border-bottom: 1px solid white;
+        }
+        .top{
+            margin-top: 3rem;
+        }
+        .top h1{
+            text-align: center;
+        }
+        section .steps{
+            margin: 5rem 0rem 0rem 10rem;
+        }
+        section #points{
+            line-height: 2;
+        }
+        .faq-section p{
+            font-size: 1rem;
+            color: hsl(220 8.9% 46.1%);
+            text-align: center;
+
+        }
+        .faq-section {
+            margin: 1.5rem 0;
+            max-width: 800px;
+            margin: 0 auto;
+    }
+
+        .faq-section h2 {
+            font-size: 3rem;
+            margin-top: 4rem;
+            color: hsl(222,47%,11%,1);
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .faq-section details {
+            margin-top: 2rem;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .faq-section details:hover {
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .faq-section summary {
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            position: relative;
+            font-weight: 600;
+            font-size: 1rem;
+            color: #444;
+            background: #f8f9fa;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-section summary::after {
+            content: '+';
+            font-size: 1.2rem;
+            color: #666;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-section details[open] summary::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-section details p {
+            padding: 0.75rem 1rem;
+            margin: 0;
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.5;
+            border-top: 1px solid #eee;
+        }
+        footer {
+            margin-top: 2rem;
+            text-align: center;
+            padding: 1rem;
+            background-color: #f0f0f0;
+        }
+        .footer-links {
+            margin-top: 1rem;
+        }
+        .footer-links a {
+            margin: 0 0.5rem;
+            color: #333;
+            text-decoration: none;
+        }
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Free Invoice Generator</h1>
+            <img src="imgs/icon (6).png" alt="logo" id="logo">
+        </div>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="createinvoice.html">Create Invoice</a>
+            <a href="howitworks.html">How it works</a>
+            <a href="#">Testimonials</a>
+            <a href="#">Benefits</a>
+            <a href="FAQ.html">FAQ</a>
+        </div>
+        <!-- <p class="subtitle">Create professional invoices in seconds - No sign up required!</p> -->
+    </header>
+
+    <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <p>Everything you need to know about the product and billing.</p>
+        <details>
+            <summary>Is this invoice generator really free?</summary>
+            <p>Yes, our invoice generator is completely free to use. There are no hidden charges or subscription fees.</p>
+        </details>
+        <details>
+            <summary>Can I download my invoice as PDF?</summary>
+            <p>Yes, you can download your invoice as a professional PDF document with a single click.</p>
+        </details>
+        <details>
+            <summary>Do I need to create an account?</summary>
+            <p>No, you can create and download invoices instantly without any registration or account creation.</p>
+        </details>
+        <details>
+            <summary>Do I have the option to add discounts to my invoices?</summary>
+            <p>Yes, you can add discounts to your invoices. Simply press the discount link to add details, specifying the discount in percentage or currency amount, making it clear to your client.</p>
+        </details>
+        <details>
+            <summary>Is the free invoice generator customizable?</summary>
+            <p>We provide one template, but you can customize it by choosing the language, currency, and date format. This ensures your invoices meet the specific needs of your business and clients.</p>
+        </details>
+        <details>
+            <summary>Is there a limit to the number of invoices I can create?</summary>
+            <p>No, there is no limit to the number of invoices you can create. You can generate as many invoices as needed to support your business operations.</p>
+        </details>
+        <details>
+            <summary>Can I add additional fields to the invoice?</summary>
+            <p>No, our current template does not support additional fields, but we are continually improving and may add this feature in the future based on user feedback.</p>
+        </details>
+        <details>
+            <summary>How do I add my logo to my invoice?</summary>
+            <p>To add your logo, simply press the “Upload a logo” button and select the file from your computer. Your logo will then be added to your invoice template.</p>
+        </details>
+        <details>
+            <summary>Is my data safe?</summary>
+            <p>Yes, your data is safe with us. We use industry-standard security measures to protect your information and ensure it is only accessible by you.</p>
+        </details>
+        <details>
+            <summary>How to send an invoice?</summary>
+            <p>You can download the invoice as a PDF and send it via your preferred method.</p>
+        </details>
+        <details>
+            <summary>Can I change the currency?</summary>
+            <p>Yes, you can change the currency by selecting the currency option in the top right corner of the invoice generator. This allows you to bill clients in their preferred currency.</p>
+        </details>
+        <details>
+            <summary>Will there be any ads on the invoices?</summary>
+            <p>No, we do not add any ads to your invoices. Your invoices will remain professional and free from any advertisements.</p>
+        </details>
+    </section>
+
+    <footer>
+        <p>Create professional invoices for free with our online invoice generator. Perfect for freelancers, small businesses, and entrepreneurs.</p>
+        <nav class="footer-links">
+            <a href="/privacy-policy">Privacy Policy</a>
+            <a href="/terms">Terms of Use</a>
+            <a href="/contact">Contact Us</a>
+        </nav>
+    </footer>
+    
+</body>
+</html>
