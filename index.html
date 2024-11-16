@@ -113,7 +113,9 @@
         color: white;
         padding: 2px;
     }
-    
+    /* header div a #home{
+        border-bottom: 1px solid white;
+    } */
     header div a:hover{
         /* text-decoration: underline; */
         border-bottom: 1px solid white;
@@ -1105,12 +1107,12 @@ text-align: center;
             <img src="imgs/icon (6).png" alt="logo" id="logo">
         </div>
         <div>
-            <a href="index.html">Home</a>
-            <a href="createinvoice.html">Create Invoice</a>
-            <a href="howitworks.html">How it works</a>
-            <a href="#">Testimonials</a>
-            <a href="#">Benefits</a>
-            <a href="FAQ.html">FAQ</a>
+            <a id="home" onclick="event.preventDefault" href="index.html">Home</a>
+            <a id="createivc" onclick="event.preventDefault" href="createinvoice.html">Create Invoice</a>
+            <a id="hiw" onclick="event.preventDefault" href="howitworks.html">How it works</a>
+            <a id="testi" onclick="event.preventDefault" href="#">Testimonials</a>
+            <a id="benef" onclick="event.preventDefault" href="#">Benefits</a>
+            <a id="fq" onclick="event.preventDefault" href="FAQ.html">FAQ</a>
         </div>
         <!-- <p class="subtitle">Create professional invoices in seconds - No sign up required!</p> -->
     </header>
