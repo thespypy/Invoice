@@ -60,13 +60,24 @@
             padding: 2px;
         }
 
-        header div a:hover {
+        header div a:hover,
+        header div a:active {
+            /* text-decoration: underline; */
             border-bottom: 1px solid white;
-            transition: .1s ease-in-out;
         }
 
-        header div a:active {
-            border-bottom: 1px solid white;
+        header div a#contact {
+            background-color: #0a338b;
+            color: white;
+            padding: 8px 25px;
+            border-radius: 30px;
+            text-transform: uppercase;
+        }
+        
+        header div a#contact:hover {
+            transition: .3s ease-in-out;
+            background-color: #2563eb;
+            border: none;
         }
 
         .top {
@@ -129,12 +140,12 @@
             <img src="imgs/icon (6).png" alt="logo" id="logo">
         </div>
         <div>
-            <a id="home" onclick="event.preventDefault" href="index.html">Home</a>
-            <a id="createivc" onclick="event.preventDefault" href="createinvoice.html">Create Invoice</a>
-            <a id="hiw" onclick="event.preventDefault" href="howitworks.html">How it works</a>
-            <a id="testi" onclick="event.preventDefault" href="#">Testimonials</a>
-            <a id="benef" onclick="event.preventDefault" href="#">Benefits</a>
-            <a id="fq" onclick="event.preventDefault" href="FAQ.html">FAQ</a>
+            <a id="home" href="index.html">Home</a>
+            <a id="createivc" href="createinvoice.html">Create Invoice</a>
+            <a id="hiw" href="howitworks.html">How it works</a>
+            <a id="testi" href="#">Testimonials</a>
+            <a id="fq" href="FAQ.html">FAQ</a>
+            <a id="contact" href="#">Contact</a>
         </div>
         <!-- <p class="subtitle">Create professional invoices in seconds - No sign up required!</p> -->
     </header>
