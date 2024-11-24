@@ -12,7 +12,7 @@
     <link rel="javascript" href="script.js">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Faculty+Glyphic&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Faculty+Glyphic&display=swap" rel="stylesheet"> -->
 
     <meta name="description"
         content="Generate professional invoices instantly with our free online tool. Easy-to-use, customizable templates, and instant PDF download. No registration required.">
@@ -83,15 +83,7 @@
             line-height: 1.5;
         }
 
-        #createinvoice {
-            max-width: 900px;
-            margin: 0 auto;
-            background-color: rgb(255, 255, 255);
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-        }
-
+        
         header {
             display: flex;
             background-color: #000000;
@@ -105,7 +97,7 @@
 
         header .logo {
             display: flex;
-
+            
         }
 
         header img {
@@ -115,6 +107,7 @@
 
         header h1 {
             color: white;
+            cursor: pointer;
         }
 
         header div a {
@@ -125,7 +118,7 @@
             color: white;
             padding: 2px;
         }
-
+        
         header div a:hover,
         header div a:active {
             /* text-decoration: underline; */
@@ -133,8 +126,8 @@
         }
 
         header div a#contact {
-            background-color: #0a338b;
-            color: white;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
             padding: 8px 25px;
             border-radius: 30px;
             text-transform: uppercase;
@@ -143,6 +136,7 @@
         header div a#contact:hover {
             transition: .3s ease-in-out;
             background-color: #2563eb;
+            color: white;
             border: none;
         }
 
@@ -155,18 +149,18 @@
             /* transition: all 1s ease-out; */
             opacity: 0;
             transition: opacity 1.5s ease-in-out;
-
+            
         }
-
+        
         .page1:hover {
             opacity: 1;
         }
 
         .page1 .left {
             height: 32rem;
-
+            
         }
-
+        
         .page1 .heading h1 {
             margin-top: 3rem;
             margin-left: 3rem;
@@ -174,13 +168,13 @@
             font-size: 50px;
             font-weight: bold;
         }
-
+        
         .page1 .heading2 h4 {
             margin-top: 1rem;
             margin-left: 3rem;
             width: 33rem;
         }
-
+        
         .page1 .creatbtn {
             margin-top: 2rem;
             margin-left: 3rem;
@@ -196,13 +190,13 @@
             text-decoration: none;
             color: white;
         }
-
+        
         .page1 .creatbtn:hover {
             background-color: #000000;
             transition: .1s ease-in-out;
             box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
         }
-
+        
         .page1 .right {
             margin-top: 5rem;
         }
@@ -214,12 +208,12 @@
             width: 500px;
             height: 350px;
         }
-
+        
         .visible {
             opacity: 1;
             transform: translateY(0);
         }
-
+        
         .header {
             text-align: center;
             margin-bottom: 1.5rem;
@@ -234,12 +228,20 @@
             margin-bottom: 0.5rem;
             letter-spacing: -0.5px;
         }
-
+        
+        #createinvoice {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: rgb(255, 255, 255);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        }
         .date-info {
             color: #666;
             margin-bottom: 0.5rem;
         }
-
+        
         .billing-info {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -597,38 +599,6 @@
         }
 
         /* New styles for SEO improvements */
-        .features-section {
-            padding: 1rem;
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        .features-section h2 {
-            font-size: 1.2rem;
-            margin-bottom: 0.75rem;
-            color: #333;
-            text-align: center;
-        }
-
-        .features-list {
-            list-style-type: none;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.75rem;
-            margin-top: 1rem;
-            font-size: 0.75rem;
-            ;
-        }
-
-        .features-list li {
-            background-color: #f0f0f0;
-            padding: 0.75rem 1rem;
-            border-radius: 4px;
-            font-size: 0.9rem;
-        }
-
         .faq-section {
             margin: 1.5rem 0;
             max-width: 800px;
@@ -973,22 +943,6 @@
             }
         }
 
-        @media (max-width: 768px) {
-            .features-list {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .features-list {
-                grid-template-columns: 1fr;
-            }
-
-            .features-section,
-            .faq-section {
-                margin: 1rem 0;
-            }
-        }
 
         /* Ad Loading Animation */
         .ad-space.loading {
@@ -1148,22 +1102,6 @@
             margin-top: 0.75rem;
         }
 
-        /* Reduced feature section spacing */
-        .features-section {
-            padding: 1rem;
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        .features-list {
-            gap: 0.75rem;
-            margin-top: 1rem;
-        }
-
-        .features-list li {
-            padding: 0.75rem 1rem;
-        }
-
         /* Footer adjustments */
         .footer {
             margin-top: 1.5rem;
@@ -1189,8 +1127,7 @@
         /* Center align text elements */
         .header p,
         .section-title,
-        .total-section h3,
-        .features-section h2 {
+        .total-section h3{
             text-align: center;
         }
 
@@ -1228,7 +1165,7 @@
             <a id="hiw" href="howitworks.html">How it works</a>
             <a id="testi" href="Testimonials.html">Testimonials</a>
             <a id="fq" href="FAQ.html">FAQ</a>
-            <a id="contact" href="#">Contact</a>
+            <a id="contact" href="contact.html">Contact</a>
         </div>
         <!-- <p class="subtitle">Create professional invoices in seconds - No sign up required!</p> -->
     </header>
@@ -1249,17 +1186,7 @@
             <img src="imgs/invoice img.jpg" alt="photo of invoice">
         </div>
     </div>
-    <section class="features-section">
-        <h2>Key Features</h2>
-        <ul class="features-list">
-            <li>✓ 100% Free - No Hidden Charges</li>
-            <li>✓ Professional PDF Format</li>
-            <li>✓ Multiple Currency Support</li>
-            <li>✓ Custom Logo Upload</li>
-            <li>✓ Automatic Calculations</li>
-            <li>✓ No Registration Required</li>
-        </ul>
-    </section>
+
     <div class="container" id="createinvoice">
         <div class="header">
             <div class="logo-upload">
@@ -1503,7 +1430,7 @@
         <nav class="footer-links">
             <a href="/privacy-policy">Privacy Policy</a>
             <a href="/terms">Terms of Use</a>
-            <a href="/contact">Contact Us</a>
+            <a href="contact.html">Contact Us</a>
         </nav>
         <p class="p2">© 2024 Free Invoice Generator</p>
     </footer>
