@@ -73,7 +73,7 @@
             border-radius: 30px;
             text-transform: uppercase;
         }
-        
+
         header div a#contact:hover {
             transition: .3s ease-in-out;
             background-color: #2563eb;
@@ -1073,7 +1073,7 @@
             <a id="home" href="index.html">Home</a>
             <a id="createivc" href="createinvoice.html">Create Invoice</a>
             <a id="hiw" href="howitworks.html">How it works</a>
-            <a id="testi" href="#">Testimonials</a>
+            <a id="testi" href="Testimonials.html">Testimonials</a>
             <a id="fq" href="FAQ.html">FAQ</a>
             <a id="contact" href="#">Contact</a>
         </div>
@@ -1273,6 +1273,21 @@
     </footer>
 
     <script>
+
+        const animeText = document.querySelector('.page1');
+
+        const observer = new IntersectionObserver((entries) => {
+
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+                else {
+                    entry.target.classList.remove('visible')
+                }
+            });
+        });
+        observer.observe(animeText)
 
         let items = [];
         let logoImage = null;
@@ -1612,7 +1627,7 @@
                     <td><input type="number" class="table-input" value="${sanitizeInput(item.quantity)}" onchange="updateItem(${index}, 'quantity', this.value)" placeholder="0"></td>
                     <td>${currencySymbols[selectedCurrency]}${item.total}</td>
                     <td><button class="delete-button" onclick="removeItem(${index})">🗑️</button></td>
-                `;
+                    `;
                 tbody.appendChild(tr);
             });
             updateTaxAndTotal();
