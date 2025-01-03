@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billable Pro | Terms</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- <link rel="stylesheet" href="responsive.css"> -->
+    <link rel="icon" href="/imgs/icon (6).png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 5rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Faculty Glyphic", sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+            font-size: medium;
+            line-height: 1.5;
+
+        }
+
+        .inner a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+
+        .inner a:hover {
+            border-bottom: 2px solid #000;
+        }
+
+        hr {
+            margin-bottom: 20px;
+        }
+
+        header {
+            display: flex;
+            background-color: #000000;
+            justify-content: space-around;
+            align-items: center;
+            height: 5rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .logo {
+            display: flex;
+
+        }
+
+        header img {
+            width: 30px;
+            height: 30px;
+        }
+
+        header h1 {
+            color: white;
+            cursor: pointer;
+        }
+
+        header .nav a {
+            line-height: 1;
+            text-decoration: none;
+            margin: 10px;
+            color: white;
+            padding: 2px;
+        }
+
+        header .nav a:hover,
+        header .nav a:active {
+            border-bottom: 1px solid white;
+        }
+
+        header .nav a#contact {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            padding: 8px 25px;
+            border-radius: 30px;
+            text-transform: uppercase;
+        }
+
+        header .nav a#contact:hover {
+            transition: .3s ease-in-out;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+        }
+
+        header .toggle-btn {
+            color: #f0f0f0;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: none;
+        }
+
+        /* DROPDOWN MENU */
+        header .dropdown-menu {
+            display: none;
+            position: absolute;
+            right: 1.7rem;
+            top: 80px;
+            height: 0;
+            width: 300px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: #000000;
+            /* backdrop-filter : blur(15px); */
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            overflow: hidden;
+            transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        header .dropdown-menu.open {
+            height: 300px;
+        }
+
+        header .dropdown-menu li {
+            text-align: center;
+            list-style: none;
+            padding: 0.7rem;
+        }
+
+        header .dropdown-menu a {
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        header .dropdown-menu a {
+            display: block;
+        }
+
+        header li a#contact {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            padding: 8px 25px;
+            border-radius: 30px;
+            text-transform: uppercase;
+        }
+
+        header li a#contact:hover {
+            transition: .3s ease-in-out;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+        }
+
+        /* RESPONSIVE FOR HEADER */
+
+        @media(max-width: 480px) {
+            header .nav a {
+                display: none;
+            }
+
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            header .toggle-btn {
+                display: block;
+            }
+
+            header .dropdown-menu {
+                display: block;
+                width: unset;
+                left: 2rem;
+            }
+        }
+
+        .container {
+            margin-left: 1.5rem;
+            margin-right: 1.5rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        .inner {
+            margin: 1.5rem;
+        }
+
+        ul {
+            margin-left: 30px;
+            color: #677788;
+            margin-bottom: 20px;
+            font-size: medium;
+            line-height: 1.6;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #677788;
+            margin-bottom: 20px;
+            font-size: medium;
+        }
+
+        .inner h1 {
+            margin-top: 20px;
+            color: #000;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            line-height: 1.6;
+            color: #000;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: medium;
+            color: #000;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            color: #333;
+            margin-top: 2rem;
+            text-align: center;
+            padding: 1rem;
+            background-color: #f0f0f0;
+        }
+
+        .footer-links {
+            margin-top: 1rem;
+        }
+
+        .footer-links a {
+            padding-bottom: 1px;
+            font-weight: 600;
+            margin: 0 0.5rem;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            border-bottom: 2px solid #333;
+        }
+
+        footer .p2 a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        footer .p2 a:hover {
+            border-bottom: 1px solid black;
+        }
+
+        footer .p2 {
+            margin-top: 1rem;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1>Free Invoice Generator</h1>
+            <img src="/imgs/icon (6).png" alt="logo" id="logo">
+        </div>
+        <div class="nav">
+            <a id="home" href="/index/index.html">Home</a>
+            <a id="createivc" href="/create-invoice/createinvoice.html">Create Invoice</a>
+            <a id="hiw" href="/how-it-works/howitworks.html">How it works</a>
+            <a id="testi" href="/testimonials/Testimonials.html">Testimonials</a>
+            <a id="fq" href="/faq/FAQ.html">FAQ</a>
+            <a id="contact" href="/contact/contact.html">Contact</a>
+        </div>
+
+        <div class="toggle-btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <div class="dropdown-menu">
+            <li><a id="home" href="/index/index.html">Home</a></li>
+            <li><a id="createivc" href="/create-invoice/createinvoice.html">Create Invoice</a></li>
+            <li><a id="hiw" href="/how-it-works/howitworks.html">How it works</a></li>
+            <li><a id="testi" href="/testimonials/Testimonials.html">Testimonials</a></li>
+            <li><a id="fq" href="/faq/FAQ.html">FAQ</a></li>
+            <li><a id="contact" href="/contact/contact.html">Contact</a></li>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="inner">
+            <h1>
+                Terms of Service
+            </h1>
+            <p>
+                Last Updated: January 1, 2025
+            </p>
+            <hr>
+
+            <p>Please read this agreement carefully before using this service.</p>
+
+            <p>By using the service or clicking “agree” customer is agreeing to be bound by this agreement. If customer
+                is agreeing to this agreement on behalf of or for the benefit of its employer, then customer represents
+                and warrants that it has the necessary authority to agree to this agreement on its employer’s behalf.
+            </p>
+
+            <p>This agreement is between Idealist Software, LLC (<strong>Invoice Generator</strong>), and the customer
+                agreeing to these terms (<strong>Customer</strong>).</p>
+
+            <h2>
+                1. Software-as-a-Service
+            </h2>
+            <p>This agreement provides Customer access to and usage of an Internet based software service as specified
+                on an order and as further outlined at: <a href="https://billable.pro">billable.pro</a>
+                (<strong>Service</strong>).</p>
+
+            <h2>
+                2. Use of Service
+            </h2>
+            <h3>
+                a. Customer Owned Data
+            </h3>
+            <p>All data and logos uploaded by Customer remains the property of Customer, as between Invoice Generator
+                and Customer (Customer Data). Customer grants Invoice Generator the right to use, publicly display and
+                distribute the Customer Data for purposes of performing under this agreement.</p>
+
+            <h3>
+                b. Contractor Access and Usage
+            </h3>
+            <p>Customer may allow its contractors to access the Service in compliance with the terms of this agreement,
+                which access must be for the sole benefit of Customer. Customer is responsible for the compliance with
+                this agreement by its contractors.</p>
+
+            <h3>
+                c. Customer Responsibilities
+            </h3>
+            <p>Customer (i) must keep its passwords secure and confidential; (ii) is solely responsible for Customer
+                Data and all activity in its account in the Service; (iii) must use commercially reasonable efforts to
+                prevent unauthorized access to its account, and notify Invoice Generator promptly of any such
+                unauthorized access; and (iv) may use the Service only in accordance with the Service’s Knowledge Base
+                and applicable law.</p>
+
+            <h3>
+                d. API
+            </h3>
+            <p>Invoice Generator provides access to its application-programming interface (API) as part of the Service.
+                Subject to the other terms of this agreement, Invoice Generator grants Customer a non-exclusive,
+                nontransferable, terminable license to interact with the API only for purposes of the Service as allowed
+                by the API.</p>
+            <ul>
+                <li>Customer may not use the API in a manner that fails to comply with the API technical documentation
+                    or with any part of the API. If any of these occur, Invoice Generator can suspend or terminate
+                    Customer’s access to the API on a temporary or permanent basis.</li>
+                <li>Invoice Generator may change or remove existing endpoints or fields in API results upon at least 30
+                    days’ notice to Customer, but Invoice Generator will use commercially reasonable efforts to support
+                    the previous version of the API for at least 6 months. Invoice Generator may add new endpoints or
+                    fields in API results without prior notice to Customer.</li>
+                <li>The API is provided on an ‘AS IS’ and ‘WHEN AVAILABLE’ basis. Invoice Generator has no liability to
+                    Customer as a result of any change, temporary unavailability, suspension, or termination of access
+                    to the API.</li>
+            </ul>
+
+            <h3>
+                f. 30-Day Trial Version
+            </h3>
+            <p>If Customer has registered for a trial use of the Service, Customer may access the Service for a 30-day
+                time period (unless extended by Invoice Generator in writing). The Service is provided AS IS, with no
+                warranty during this time period. All Customer data will be deleted after the trial period, unless
+                Customer converts its account to a paid Service.</p>
+
+            <h2>
+                3. Disclaimer
+            </h2>
+            <p>INVOICE GENERATOR DISCLAIMS ALL WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF
+                MERCHANTABILITY, TITLE AND FITNESS FOR A PARTICULAR PURPOSE. WHILE INVOICE GENERATOR TAKES REASONABLE
+                PHYSICAL, TECHNICAL AND ADMINISTRATIVE MEASURES TO SECURE THE SERVICE, INVOICE GENERATOR DOES NOT
+                GUARANTEE THAT THE SERVICE CANNOT BE COMPROMISED. CUSTOMER UNDERSTANDS THAT THE SERVICE MAY NOT BE ERROR
+                FREE, AND USE MAY BE INTERRUPTED.</p>
+
+            <h2>
+                4. Payment
+            </h2>
+            <p>Customer must pay all fees as specified on the order, but if not specified then within 30 days of receipt
+                of an invoice. Customer is responsible for the payment of all sales, use, withholding, VAT and other
+                similar taxes. This agreement contemplates one or more orders for the Service, which orders are governed
+                by the terms of this agreement.</p>
+
+            <h2>
+                5. Mutual Confidentiality and Data Protection
+            </h2>
+            <h3>
+                a. Definition of Confidential Information
+            </h3>
+            <p>Confidential Information means all non-public information disclosed by a party
+                (<strong>Discloser</strong>) to the other party (<strong>Recipient</strong>), whether orally or in
+                writing, that is designated as confidential or that reasonably should be understood to be confidential
+                given the nature of the information and the circumstances of disclosure (<strong>Confidential
+                    Information</strong>). Invoice Generator’s Confidential Information includes without limitation the
+                Service (including without limitation the Service user interface design and layout, and pricing
+                information).</p>
+
+            <h3>
+                b. Protection of Confidential Information
+            </h3>
+            <p>The Recipient must use the same degree of care that it uses to protect the confidentiality of its own
+                confidential information (but in no event less than reasonable care) not to disclose or use any
+                Confidential Information of the Discloser for any purpose outside the scope of this agreement. The
+                Recipient must make commercially reasonable efforts to limit access to Confidential Information of
+                Discloser to those of its employees and contractors who need such access for purposes consistent with
+                this agreement and who have signed confidentiality agreements with Recipient no less restrictive than
+                the confidentiality terms of this agreement.</p>
+
+            <h3>
+                c. Exclusions
+            </h3>
+            <p>Confidential Information excludes information that: (i) is or becomes generally known to the public
+                without breach of any obligation owed to Discloser, (ii) was known to the Recipient prior to its
+                disclosure by the Discloser without breach of any obligation owed to the Discloser, (iii) is received
+                from a third party without breach of any obligation owed to Discloser, or (iv) was independently
+                developed by the Recipient without use or access to the Confidential Information. The Recipient may
+                disclose Confidential Information to the extent required by law or court order, but will provide
+                Discloser with advance notice to seek a protective order.</p>
+
+            <h2>
+                6. Proprietary Property
+            </h2>
+            <h3>
+                a. Reservation of Rights
+            </h3>
+            <p>The software, workflow processes, user interface, designs, know-how, and other technologies provided by
+                Invoice Generator as part of the Service are the proprietary property of Invoice Generator and its
+                licensors, and all right, title and interest in and to such items, including all associated intellectual
+                property rights, remain only with Invoice Generator. Customer may not remove or modify any proprietary
+                marking or restrictive legends in the Service. Invoice Generator reserves all rights unless expressly
+                granted in this agreement.</p>
+
+            <h3>
+                b. Restrictions
+            </h3>
+            <p>Customer may not (i) sell, resell, rent or lease the Service or use it in a service provider capacity;
+                (ii) use the Service to store or transmit infringing, unsolicited marketing emails, libelous, or
+                otherwise objectionable, unlawful or tortious material, or to store or transmit material in violation of
+                third-party rights; (iii) interfere with or disrupt the integrity or performance of the Service; (iv)
+                attempt to gain unauthorized access to the Service or their related systems or networks; (v) reverse
+                engineer the Service; or (vi) access the Service to build a competitive service or product, or copy any
+                feature, function or graphic for competitive purposes.</p>
+
+            <h3>
+                c. Aggregate Data
+            </h3>
+            <p>During and after the term of this agreement, Invoice Generator may use non-personally identifiable
+                Customer Data within the Service for purposes of enhancing the Service, aggregated statistical analysis,
+                technical support and other business purposes.</p>
+
+            <h2>
+                7. Term and Termination
+            </h2>
+            <h3>
+                a. Term
+            </h3>
+            <p>This agreement continues until all orders have terminated.</p>
+
+            <h3>
+                b. Mutual Termination for Material Breach
+            </h3>
+            <p>If either party is in material breach of this agreement, the other party may terminate this agreement at
+                the end of a written 14-day notice/cure period, if the breach has not been cured. </p>
+
+            <h3>
+                c. Suspension for Non-Payment
+            </h3>
+            <p>Invoice Generator may temporarily suspend or terminate, or both, the Service if Customer’s payment on any
+                invoice is more than 15 days past due.
+
+            <h3>
+                d. Maintenance of Customer Data
+            </h3>
+            <ul>
+                <li><em>Within 90-days after termination</em>, Customer Data will be available.</li>
+                <li><em>After such 90-day period</em>, Invoice Generator has no obligation to maintain the Customer Data
+                    and may destroy it.</li>
+            </ul>
+
+            <h3>
+                e. Return Invoice Generator Property Upon Termination
+            </h3>
+            <p>Upon termination of this agreement for any reason, Customer must pay Invoice Generator for any unpaid
+                amounts, and destroy or return all property of Invoice Generator. Upon Invoice Generator’s request,
+                Customer will confirm in writing its compliance with this destruction or return requirement.</p>
+
+            <h3>
+                f. Suspension for Violations of Law
+            </h3>
+            <p>Invoice Generator may temporarily suspend the Service or remove the applicable Customer Data, or both, if
+                it in good faith believes that, as part of using the Service, Customer has violated a law. Invoice
+                Generator will attempt to contact Customer in advance.</p>
+
+            <h2>
+                8. Liability Limit
+            </h2>
+            <h3>
+                a. Exclusion of indirect damages
+            </h3>
+            <p>To the maximum extent allowed by law, Invoice Generator is not liable for any indirect, special,
+                incidental or consequential damages arising out of or related to this agreement (including, without
+                limitation, costs of delay; loss of data, records or information; and lost profits), even if it knows of
+                the possibility of such damage or loss.</p>
+
+            <h3>
+                b. Total limit on liability
+            </h3>
+            <p>To the maximum extent allowed by law, Invoice Generator’s total liability arising out of or related to
+                this agreement (whether in contract, tort or otherwise) does not exceed the amount paid by Customer
+                within the 6-month period prior to the event that gave rise to the liability.</p>
+
+            <h2>
+                9. Indemnity
+            </h2>
+            <p>If any third-party brings a claim against Invoice Generator, or requires Invoice Generator to respond to
+                a legal process, related to Customer’s acts, omissions, data or information within the Software,
+                Customer must defend, indemnify and hold Invoice Generator harmless from and against all damages,
+                losses, and expenses of any kind (including reasonable legal fees and costs) related to such claim or
+                request.</p>
+
+            <h2>
+                10. Governing Law and Forum
+            </h2>
+            <p>This agreement is governed by the laws of the State of Texas (without regard to conflicts of law
+                principles) for any dispute between the parties or relating in any way to the subject matter of this
+                agreement. Any suit or legal proceeding must be exclusively brought in the federal or state courts for
+                Travis County, Texas, and Customer submits to this personal jurisdiction and venue. Nothing in this
+                agreement prevents either party from seeking injunctive relief in a court of competent jurisdiction. The
+                prevailing party in any litigation is entitled to recover its attorneys’ fees and costs from the other
+                party.</p>
+
+            <h2>
+                11. Other Terms
+            </h2>
+            <h3>
+                a. Entire Agreement and Changes
+            </h3>
+            <p>This agreement and the order constitute the entire agreement between the parties and supersede any prior
+                or contemporaneous negotiations or agreements, whether oral or written, related to this subject matter.
+                Customer is not relying on any representation concerning this subject matter, oral or written, not
+                included in this agreement. No representation, promise or inducement not included in this agreement is
+                binding. No modification of this agreement is effective unless both parties sign it, and no waiver is
+                effective unless the party waiving the right signs a waiver in writing. </p>
+
+            <h3>
+                b. No Assignment
+            </h3>
+            <p>Neither party may assign or transfer this agreement or an order to a third party, except that this
+                agreement with all orders may be assigned, without the consent of the other party, as part of a merger,
+                or sale of substantially all the assets, of a party.</p>
+
+            <h3>
+                c. Independent Contractors
+            </h3>
+            <p>The parties are independent contractors with respect to each other.</p>
+
+            <h3>
+                d. Enforceability and Force Majeure
+            </h3>
+            <p>If any term of this agreement is invalid or unenforceable, the other terms remain in effect. Except for
+                the payment of monies, neither party is liable for events beyond its reasonable control, including,
+                without limitation force majeure events.</p>
+
+            <h3>
+                e. Money Damages Insufficient
+            </h3>
+            <p>Any breach by a party of this agreement or violation of the other party’s intellectual property rights
+                could cause irreparable injury or harm to the other party. The other party may seek a court order to
+                stop any breach or avoid any future breach.</p>
+
+            <h3>
+                f. No Additional Terms
+            </h3>
+            <p>Invoice Generator rejects additional or conflicting terms of any Customer form-purchasing document.</p>
+
+            <h3>
+                g. Order of Precedence
+            </h3>
+            <p>If there is an inconsistency between this agreement and an order, the order prevails.</p>
+
+            <h3>
+                h. Survival of Terms
+            </h3>
+            <p>Any terms that by their nature survive termination of this agreement for a party to assert its rights and
+                receive the protections of this agreement, will survive. The UN Convention on Contracts for the
+                International Sale of Goods does not apply.</p>
+
+            <h3>
+                i. Feedback
+            </h3>
+            <p>By submitting ideas, suggestions or feedback to Invoice Generator regarding the Service, Customer agrees
+                that such items submitted do not contain confidential or proprietary information; and Customer hereby
+                grants Invoice Generator an irrevocable, unlimited, royalty-free and fully-paid perpetual license to use
+                such items for any business purpose.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Create professional invoices for free with our online invoice generator. Perfect for freelancers, small
+            businesses, and entrepreneurs.</p>
+        <nav class="footer-links">
+            <a href="/privacy-policy/private.html">Privacy Policy</a>
+            <a href="/terms/terms.html">Terms of Use</a>
+            <a href="/contact/contact.html">Contact Us</a>
+        </nav>
+        <p class="p2">© 2024 <a href="https://billable.pro/">Billable.pro</p>
+    </footer>
+
+    <script>
+        const toggleBtn = document.querySelector('.toggle-btn')
+        const toggleBtnIcon = document.querySelector('.toggle-btn i')
+        const dropDownMenu = document.querySelector('.dropdown-menu')
+
+        toggleBtn.onclick = function () {
+            dropDownMenu.classList.toggle('open')
+            const isOpen = dropDownMenu.classList.contains('open')
+
+            toggleBtnIcon.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+        }
+    </script>
+
+</body>
+
+</html>

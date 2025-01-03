@@ -1,0 +1,1572 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Billable Pro | Create Professional Invoices Online</title>
+    <link rel="icon" href="/imgs/icon (6).png">
+    <!-- <link rel="stylesheet" href="style.css">/ -->
+    <link rel="javascript" href="script.js">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Faculty+Glyphic&display=swap" rel="stylesheet"> -->
+
+    <meta name="description"
+        content="Generate professional invoices instantly with our free online tool. Easy-to-use, customizable templates, and instant PDF download. No registration required.">
+    <meta name="keywords"
+        content="free invoice generator, invoice maker, create invoice online, free invoice template, billing software, invoice generator, invoice creator">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:;">
+    <meta name="csrf-token" content="%= csrfToken %>">
+
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="Free Invoice Generator | Create Professional Invoices Online">
+    <meta property="og:description"
+        content="Generate professional invoices instantly with our free online tool. No registration required.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com">
+    <meta property="og:image" content="https://yourdomain.com/path-to-preview-image.jpg">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Invoice Generator">
+    <meta name="twitter:description" content="Create professional invoices for free online. No registration needed.">
+    <meta name="twitter:image" content="https://yourdomain.com/path-to-preview-image.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yourdomain.com">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Billable Pro",
+      "description": "Create professional invoices online for free",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Custom invoice templates",
+        "PDF download",
+        "Multiple currency support",
+        "Tax calculation",
+        "Logo upload"
+      ]
+    }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 5rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Faculty Glyphic", sans-serif;
+        }
+
+        body {
+            /* background-color: #f8f9fa;  */
+            /* padding: 1rem;  */
+            font-size: medium;
+            line-height: 1.5;
+        }
+
+
+        header {
+            display: flex;
+            background-color: #000000;
+            justify-content: space-around;
+            align-items: center;
+            height: 5rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .logo {
+            display: flex;
+
+        }
+
+        header img {
+            width: 30px;
+            height: 30px;
+        }
+
+        header h1 {
+            color: white;
+            cursor: pointer;
+        }
+
+        header div a {
+            text-transform: bold;
+            line-height: 1;
+            text-decoration: none;
+            margin: 10px;
+            color: white;
+            padding: 2px;
+        }
+
+        header div a:hover,
+        header div a:active {
+            /* text-decoration: underline; */
+            border-bottom: 1px solid white;
+        }
+
+        header div a#contact {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            padding: 8px 25px;
+            border-radius: 30px;
+            text-transform: uppercase;
+        }
+
+        header div a#contact:hover {
+            transition: .3s ease-in-out;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        #createinvoice {
+            max-width: 95%;
+            margin: 0 auto;
+            background-color: rgb(255, 255, 255);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .date-info {
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .billing-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .billing-section h2 {
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .input-group {
+            margin-bottom: 0.75rem;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 0.625rem;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            outline: none;
+            transition: all 0.2s ease;
+            background: #fff;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border-color: #111;
+            box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 50px;
+        }
+
+        /* Responsive table styles */
+        .table-responsive {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #eee;
+        }
+
+        th {
+            background-color: #111;
+            color: white;
+            padding: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            padding: 0.75rem;
+            border-bottom: 1px solid #eee;
+            background: white;
+        }
+
+        tr:hover td {
+            background-color: #fafafa;
+        }
+
+        td:first-child {
+            width: 40%;
+        }
+
+        td:nth-child(2),
+        td:nth-child(3),
+        td:nth-child(4) {
+            width: 15%;
+        }
+
+        td:last-child {
+            width: 10%;
+        }
+
+        .table-input {
+            background: transparent;
+            width: 100%;
+            word-wrap: break-word;
+            white-space: pre-wrap;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .button {
+            background-color: #111;
+            color: white;
+            padding: 0.625rem 1.25rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            min-width: 120px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 6px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+
+        .button:hover {
+            background-color: #333;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .button.outline {
+            background-color: transparent;
+            border: 2px solid #111;
+            color: #111;
+        }
+
+        .button.outline:hover {
+            background-color: #111;
+            color: white;
+        }
+
+        .table-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .total-section {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            margin-top: 0.75rem;
+        }
+
+        .tax-settings {
+            background-color: #f9f9f9;
+            padding: 0.75rem;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+        }
+
+        .total-display {
+            background: #111;
+            padding: 1rem;
+            border-radius: 6px;
+            color: white;
+            margin-top: 0.75rem;
+        }
+        #totalPreview {
+            font-size: 1.5rem;
+            color: #111;
+        }
+        #totalAmount, .total-display{
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 1.5rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid #eee;
+        }
+
+        .footer p {
+            font-family: Georgia, serif;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .social-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            color: #111;
+        }
+
+        .delete-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #666;
+            padding: 0.5rem;
+        }
+
+        .delete-button:hover {
+            color: #111;
+        }
+
+        .terms-conditions {
+            margin: 1rem 0;
+        }
+
+        .terms-conditions input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            margin-top: 0.5rem;
+        }
+
+        .currency-selector {
+            margin: 0.5rem 0;
+            width: 180px;
+        }
+
+        @media (max-width: 768px) {
+            .billing-info {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .total-display {
+                padding: 0.75rem;
+                font-size: 1.1rem;
+            }
+
+            .table-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            table {
+                font-size: 14px;
+            }
+
+            td,
+            th {
+                padding: 0.5rem;
+            }
+
+            td:first-child {
+                width: 35%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0.5rem;
+            }
+
+            .header h1 {
+                font-size: 1.75rem;
+            }
+
+            .button {
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+
+            td:first-child {
+                width: 30%;
+            }
+
+            td:nth-child(2),
+            td:nth-child(3),
+            td:nth-child(4) {
+                width: 20%;
+            }
+
+            td:last-child {
+                width: 10%;
+            }
+        }
+
+        #invoicePreview {
+            background-color: white;
+            padding: 30px;
+            margin: 1rem auto;
+            max-width: 900px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .invoice-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .invoice-title {
+            font-size: 2rem;
+            font-family: Georgia, serif;
+        }
+
+        .address-block {
+            margin-bottom: 1rem;
+        }
+
+        .address-block h3 {
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .thank-you-note {
+            text-align: center;
+            margin: 1rem 0;
+        }
+
+        .logo-upload {
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .logo-preview {
+            max-width: 180px;
+            max-height: 90px;
+            margin: 0.5rem 0;
+        }
+
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+
+            #invoicePreview,
+            #invoicePreview * {
+                visibility: visible;
+            }
+
+            #invoicePreview {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+            }
+
+            .no-print {
+                display: none;
+            }
+        }
+
+        footer {
+            color: #333;
+            margin-top: 2rem;
+            text-align: center;
+            padding: 1rem;
+            background-color: #f0f0f0;
+        }
+
+        .footer-links {
+            margin-top: 1rem;
+        }
+
+        .footer-links a {
+            padding-bottom: 1px;
+            font-weight: 600;
+            margin: 0 0.5rem;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            border-bottom: 2px solid #333;
+        }
+        footer .p2 a{
+            text-decoration: none;
+            color: #333;
+        }
+        footer .p2 a:hover{
+            border-bottom: 1px solid black;
+        }
+
+        footer .p2 {
+            margin-top: 1rem;
+            color: #333;
+        }
+
+
+        /* Added CSS for invoice details */
+        .invoice-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .invoice-details .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .invoice-details label {
+            font-size: 0.875rem;
+            color: #666;
+            margin-bottom: 0.25rem;
+        }
+
+        .invoice-details input {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        /* Add after header section (around line 366) */
+        .ad-container.ad-banner-top {
+            margin-bottom: 2rem;
+        }
+
+        .ad-container.ad-banner-top .ad-label {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .ad-container.ad-banner-top .ad-space {
+            background-color: #f0f0f0;
+            padding: 1rem;
+            border-radius: 4px;
+        }
+
+        /* Add before features section (around line 367) */
+        .ad-container.ad-native {
+            margin-bottom: 2rem;
+        }
+
+        .ad-container.ad-native .ad-label {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .ad-container.ad-native .ad-space {
+            background-color: #f0f0f0;
+            padding: 1rem;
+            border-radius: 4px;
+        }
+
+        /* Add after the invoice form, before FAQ section (around line 547) */
+        .ad-container.ad-banner-middle {
+            margin-bottom: 2rem;
+        }
+
+        .ad-container.ad-banner-middle .ad-label {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .ad-container.ad-banner-middle .ad-space {
+            background-color: #f0f0f0;
+            padding: 1rem;
+            border-radius: 4px;
+        }
+
+        /* Add floating sidebar ad (after container div) */
+        .ad-container.ad-sidebar {
+            margin-top: 2rem;
+        }
+
+        .ad-container.ad-sidebar .ad-label {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .ad-container.ad-sidebar .ad-space {
+            background-color: #f0f0f0;
+            padding: 1rem;
+            border-radius: 4px;
+        }
+
+        /* Ad Container Styles */
+        .ad-container {
+            margin: 20px auto;
+            text-align: center;
+            max-width: 100%;
+            overflow: hidden;
+            background: #f9f9f9;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .ad-label {
+            font-size: 12px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 4px;
+            background: #eee;
+        }
+
+        .ad-space {
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        /* Top Banner Ad */
+        .ad-banner-top {
+            max-width: 728px;
+            margin: 20px auto;
+        }
+
+        /* Native Ad */
+        .ad-native {
+            max-width: 728px;
+            margin: 30px auto;
+            background: white;
+            border: 1px solid #eee;
+            padding: 15px;
+        }
+
+        /* Sidebar Ad */
+        .ad-sidebar {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 300px;
+            display: none;
+            /* Hidden by default on mobile */
+        }
+
+        /* Middle Banner Ad */
+        .ad-banner-middle {
+            max-width: 728px;
+            margin: 30px auto;
+            background: white;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 1200px) {
+            .ad-sidebar {
+                display: block;
+                /* Show sidebar ad on desktop */
+            }
+
+            .container {
+                margin-right: 340px;
+                /* Make space for sidebar ad */
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .ad-banner-top,
+            .ad-banner-middle,
+            .ad-native {
+                max-width: 100%;
+            }
+
+            .ad-space {
+                min-height: 60px;
+            }
+        }
+
+
+        /* Ad Loading Animation */
+        .ad-space.loading {
+            background: linear-gradient(90deg, #f0f0f0 25%, #f8f8f8 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loadingAnimation 1.5s infinite;
+        }
+
+        @keyframes loadingAnimation {
+            0% {
+                background-position: 200% 0;
+            }
+
+            100% {
+                background-position: -200% 0;
+            }
+        }
+
+        /* Updated Button Styles */
+        .button {
+            background-color: #111;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 120px;
+            text-align: center;
+        }
+
+        .button:hover {
+            background-color: #333;
+            transform: translateY(-1px);
+        }
+
+        .button:active {
+            transform: translateY(0);
+        }
+
+        .button.outline {
+            background-color: transparent;
+            border: 1.5px solid #111;
+            color: #111;
+        }
+
+        .button.outline:hover {
+            background-color: #111;
+            color: white;
+        }
+
+        /* Button container styles */
+        .footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+
+        .footer p {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 480px) {
+            .button-group {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .button {
+                width: 100%;
+            }
+        }
+
+        /* Reduced spacing and centered header */
+        .header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            /* Reduced font size */
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        /* Reduced spacing in form elements */
+        .billing-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            /* Reduced gap */
+            margin-bottom: 1rem;
+        }
+
+        .input-group {
+            margin-bottom: 0.75rem;
+            /* Reduced margin */
+        }
+
+        input,
+        textarea,
+        select {
+            padding: 0.625rem;
+            /* Reduced padding */
+            border: 1px solid #eee;
+            border-radius: 4px;
+        }
+
+        /* Tighter table spacing */
+        table {
+            margin-bottom: 1rem;
+        }
+
+        th,
+        td {
+            padding: 0.75rem;
+            /* Reduced padding */
+        }
+
+        /* Adjusted button sizes */
+        .button {
+            padding: 0.625rem 1.25rem;
+            /* Reduced padding */
+            min-width: 120px;
+            /* Reduced min-width */
+        }
+
+        /* Tighter total section */
+        .total-section {
+            padding: 1rem;
+            margin-top: 0.75rem;
+        }
+
+        .total-display {
+            padding: 1rem;
+            margin-top: 0.75rem;
+        }
+
+        /* Footer adjustments */
+        .footer {
+            margin-top: 1.5rem;
+            padding-top: 0.75rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .header h1 {
+                font-size: 1.75rem;
+            }
+
+            .billing-info {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+            }
+        }
+
+        /* Center align text elements */
+        .header p,
+        .section-title,
+        .total-section h3 {
+            text-align: center;
+        }
+
+        /* Ensure consistent spacing between sections */
+        .section {
+            margin-bottom: 1.25rem;
+        }
+
+        /* Tighter spacing for mobile */
+        @media (max-width: 480px) {
+            body {
+                padding: 0.5rem;
+            }
+
+            .container {
+                padding: 0.75rem;
+            }
+
+            .header {
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1>Free Invoice Generator</h1>
+            <img src="/imgs/icon (6).png" alt="logo" id="logo">
+        </div>
+        <div>
+            <a id="home" href="/index/index.html">Home</a>
+            <a id="createivc" href="/create-invoice/createinvoice.html">Create Invoice</a>
+            <a id="hiw" href="/how-it-works/howitworks.html">How it works</a>
+            <a id="testi" href="/testimonials/Testimonials.html">Testimonials</a>
+            <a id="fq" href="/faq/FAQ.html">FAQ</a>
+            <a id="contact" href="/contact/contact.html">Contact</a>
+        </div>
+        <!-- <p class="subtitle">Create professional invoices in seconds - No sign up required!</p> -->
+    </header>
+    <div class="container" id="createinvoice">
+        <div class="header">
+            <div class="logo-upload">
+                <input type="file" id="logoInput" accept="image/*" onchange="handleLogoUpload(event)"
+                    style="display: none">
+                <button class="button outline" onclick="document.getElementById('logoInput').click()">Upload
+                    Logo</button>
+                <img id="logoPreview" class="logo-preview" style="display: none">
+            </div>
+            <h2>INVOICE</h2>
+            <div class="invoice-details">
+                <div class="input-group">
+                    <label for="invoiceNumber">Invoice Number:</label>
+                    <input type="text" id="invoiceNumber" placeholder="INV-001">
+                </div>
+                <div class="input-group">
+                    <label for="poNumber">PO Number:</label>
+                    <input type="text" id="poNumber" placeholder="PO-001">
+                </div>
+                <div class="input-group">
+                    <label for="issueDate">Issue Date:</label>
+                    <input type="date" id="issueDate" now>
+                </div>
+                <div class="input-group">
+                    <label for="dueDate">Due Date:</label>
+                    <input type="date" id="dueDate">
+                </div>
+            </div>
+            <div class="currency-selector">
+                <select id="currencySelect" onchange="updateCurrency()">
+                    <option value="USD">USD ($)</option>
+                    <option value="EUR">EUR (€)</option>
+                    <option value="INR">INR (₹)</option>
+                    <option value="GBP">GBP (£)</option>
+                    <option value="JPY">JPY (¥)</option>
+                    <option value="CAD">CAD ($)</option>
+                    <option value="AUD">AUD ($)</option>
+                </select>
+            </div>
+        </div>
+        <div class="billing-info">
+            <div class="billing-section">
+                <h3>Issued to:</h3>
+                <div class="input-group">
+                    <input type="text" id="toName" placeholder="Name">
+                </div>
+                <div class="input-group">
+                    <textarea id="toAddress" placeholder="Address"></textarea>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="toEmail" placeholder="Email">
+                </div>
+                <div class="input-group">
+                    <input type="phone" id="fromPhone" placeholder="Phone Number">
+                </div>
+            </div>
+            <div class="billing-section">
+                <h3>Invoiced from:</h3>
+                <div class="input-group">
+                    <input type="text" id="fromName" placeholder="Name">
+                </div>
+                <div class="input-group">
+                    <textarea id="fromAddress" placeholder="Address"></textarea>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="fromEmail" placeholder="Email">
+                </div>
+                <div class="input-group">
+                    <input type="phone" id="fromPhone" placeholder="Phone Number">
+                </div>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table id="itemsTable">
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+                <tbody id="itemsTableBody"></tbody>
+            </table>
+        </div>
+
+        <div class="table-actions">
+            <button class="button outline" id="addItemButton">Add Item</button>
+            <div class="total-section">
+                <div class="tax-settings">
+                    <label for="taxRate">Tax Rate (%)</label>
+                    <input type="number" id="taxRate" min="0" max="100" step="0.1" value="0"
+                        onchange="updateTaxAndTotal()">
+                </div>
+                <div class="total-display">
+                    Subtotal: <span id="subtotalAmount">0.00</span><br>
+                    Tax: <span id="taxAmount">0.00</span><br>
+                    Total: <span id="totalAmount">0.00</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="terms-conditions">
+            <h3>Terms & Conditions Link:</h3>
+            <input type="url" id="termsConditions" placeholder="Paste your terms & conditions URL here">
+        </div>
+
+        <div class="footer">
+            <p>Thank you for your support!</p>
+            <button class="button outline" id="previewButton">Preview Invoice</button>
+            <button class="button" onclick="generatePDF()">Download PDF</button>
+        </div>
+
+        <div id="invoicePreview" style="display: none;">
+            <!-- Preview content here -->
+            <div class="invoice-header">
+                <div>
+                    <img id="logoPreviewInvoice" class="logo-preview" style="display: none">
+                    <div class="invoice-title">INVOICE</div>
+                </div>
+                <div class="invoice-details">
+                    <div><strong>Date:</strong> <span id="datePreview"></span></div>
+                    <div><strong>Due:</strong> On Receipt</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col address-block">
+                    <h3>From:</h3>
+                    <div id="fromNamePreview"></div>
+                    <div id="fromAddressPreview"></div>
+                    <div id="fromEmailPreview"></div>
+                    <div id="fromPhonePreview"></div>
+                </div>
+                <div class="col address-block">
+                    <h3>Bill To:</h3>
+                    <div id="toNamePreview"></div>
+                    <div id="toAddressPreview"></div>
+                    <div id="toEmailPreview"></div>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Description</th>
+                            <th>Quantity</th>
+                            <th>Unit Price</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody id="itemsPreview"></tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3" style="text-align: right;"><strong>Subtotal:</strong></td>
+                            <td id="subtotalPreview"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="text-align: right;"><strong>Tax:</strong></td>
+                            <td id="taxPreview"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="text-align: right;"><strong>Total:</strong></td>
+                            <td id="totalPreview"></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="terms-conditions">
+                <h3>Terms & Conditions:</h3>
+                <div id="termsPreview"></div>
+            </div>
+            <div class="thank-you-note">
+                <p>Thank you for your business! ❤️</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Create professional invoices for free with our online invoice generator. Perfect for freelancers, small
+            businesses, and entrepreneurs.</p>
+        <nav class="footer-links">
+            <a href="/privacy-policy/private.html">Privacy Policy</a>
+            <a href="/terms/terms.html">Terms of Use</a>
+            <a href="/contact/contact.html">Contact Us</a>
+        </nav>
+        <p class="p2">© 2024 <a href="https://billable.pro/">Billable.pro</p>
+    </footer>
+
+    <script>
+        let items = [];
+        let logoImage = null;
+        let selectedCurrency = 'USD';
+        let currencySymbols = {
+            'USD': '$',
+            'EUR': '€',
+            'INR': '₹',
+            'GBP': '£',
+            'JPY': '¥',
+            'CAD': '$',
+            'AUD': '$'
+        };
+
+        function updateCurrency() {
+            selectedCurrency = document.getElementById('currencySelect').value;
+            renderItems();
+            updatePreview();
+        }
+
+        function handleLogoUpload(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    logoImage = e.target.result;
+                    const preview = document.getElementById('logoPreview');
+                    const previewInvoice = document.getElementById('logoPreviewInvoice');
+                    preview.src = logoImage;
+                    previewInvoice.src = logoImage;
+                    preview.style.display = 'block';
+                    previewInvoice.style.display = 'block';
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function updateTaxAndTotal() {
+            const taxRate = parseFloat(document.getElementById('taxRate').value) || 0;
+            const subtotal = calculateSubtotal();
+            const tax = (subtotal * taxRate / 100).toFixed(2);
+            const total = (parseFloat(subtotal) + parseFloat(tax)).toFixed(2);
+
+            document.getElementById('subtotalAmount').textContent = `${currencySymbols[selectedCurrency]}${subtotal}`;
+            document.getElementById('taxAmount').textContent = `${currencySymbols[selectedCurrency]}${tax}`;
+            document.getElementById('totalAmount').textContent = `${currencySymbols[selectedCurrency]}${total}`;
+        }
+
+        // Set default date for issue date
+        document.addEventListener('DOMContentLoaded', function () {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('issueDate').value = today;
+        });
+
+        document.getElementById('addItemButton').addEventListener('click', addItem);
+        addItem();
+
+        document.getElementById('previewButton').addEventListener('click', updatePreview);
+
+        function generatePDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            // Define colors (matching the website's scheme)
+            const primaryColor = [17, 17, 17]; // #111111
+            const secondaryColor = [102, 102, 102]; // #666666
+            const accentColor = [221, 221, 221]; // #dddddd
+
+            // Set document properties
+            doc.setProperties({
+                title: 'Invoice',
+                subject: 'Invoice generated using Billable Pro',
+                author: 'Billable Pro',
+                keywords: 'invoice, free, generator',
+                creator: 'Billable Pro'
+            });
+
+            // Add logo if exists
+            if (logoImage) {
+                const img = new Image();
+                img.src = logoImage;
+                const aspectRatio = img.width / img.height;
+                const maxWidth = 40;
+                const maxHeight = 20;
+                let width = maxWidth;
+                let height = width / aspectRatio;
+
+                if (height > maxHeight) {
+                    height = maxHeight;
+                    width = height * aspectRatio;
+                }
+
+                doc.addImage(logoImage, 'JPEG', 15, 15, width, height);
+            }
+
+            // Add invoice title and branding
+            doc.setFontSize(28);
+            doc.setTextColor(primaryColor[0], primaryColor[1], primaryColor[2]);
+            doc.setFont("helvetica", "bold");
+            doc.text("INVOICE", 200, 25, null, null, "right");
+
+            doc.setFontSize(10);
+            doc.setTextColor(secondaryColor[0], secondaryColor[1], secondaryColor[2]);
+            doc.setFont("helvetica", "normal");
+            doc.text("Generated by Billable Pro", 200, 32, null, null, "right");
+            doc.setTextColor(accentColor[0], accentColor[1], accentColor[2]);
+            doc.text("https://freeinvoicegenerator.com", 200, 37, null, null, "right");
+
+            // Add horizontal line
+            doc.setDrawColor(accentColor[0], accentColor[1], accentColor[2]);
+            doc.setLineWidth(0.5);
+            doc.line(15, 42, 195, 42);
+
+            // Reset text color
+            doc.setTextColor(0, 0, 0);
+
+            // Add invoice details
+            doc.setFontSize(10);
+            doc.setTextColor(secondaryColor[0], secondaryColor[1], secondaryColor[2]);
+            doc.text(`Invoice Number: ${document.getElementById('invoiceNumber').value}`, 15, 50);
+            doc.text(`PO Number: ${document.getElementById('poNumber').value}`, 15, 56);
+            doc.text(`Issue Date: ${document.getElementById('issueDate').value}`, 15, 62);
+            doc.text(`Due Date: ${document.getElementById('dueDate').value}`, 15, 68);
+
+            // Add billing info
+            doc.setFontSize(12);
+            doc.setFont("helvetica", "bold");
+            doc.setTextColor(primaryColor[0], primaryColor[1], primaryColor[2]);
+            doc.text("From:", 15, 80);
+            doc.text("Bill To:", 105, 80);
+
+            doc.setFont("helvetica", "normal");
+            doc.setFontSize(10);
+            doc.setTextColor(0, 0, 0);
+            const fromName = document.getElementById('fromName').value || '';
+            const fromAddress = document.getElementById('fromAddress').value || '';
+            const fromEmail = document.getElementById('fromEmail').value || '';
+            const fromPhone = document.getElementById('fromPhone').value || '';
+
+            doc.text(fromName, 15, 87);
+            doc.text(fromAddress.split('\n'), 15, 93);
+            doc.text(fromEmail, 15, 108);
+            doc.text(fromPhone, 15, 114);
+
+            const toName = document.getElementById('toName').value || '';
+            const toAddress = document.getElementById('toAddress').value || '';
+            const toEmail = document.getElementById('toEmail').value || '';
+
+            doc.text(toName, 105, 87);
+            doc.text(toAddress.split('\n'), 105, 93);
+            doc.text(toEmail, 105, 108);
+
+            // Add items table
+            const headers = [["Description", "Quantity", "Unit Price", "Total"]];
+            const data = items.map(item => [
+                item.description,
+                item.quantity,
+                `${currencySymbols[selectedCurrency]}${item.price}`,
+                `${currencySymbols[selectedCurrency]}${item.total}`
+            ]);
+
+            doc.autoTable({
+                startY: 125,
+                head: headers,
+                body: data,
+                theme: 'striped',
+                headStyles: {
+                    fillColor: primaryColor,
+                    textColor: [255, 255, 255],
+                    fontSize: 11,
+                    fontStyle: 'bold',
+                    halign: 'left'
+                },
+                styles: {
+                    fontSize: 10,
+                    cellPadding: 5,
+                },
+                columnStyles: {
+                    0: { cellWidth: 'auto' },
+                    1: { cellWidth: 30, halign: 'center' },
+                    2: { cellWidth: 40, halign: 'right' },
+                    3: { cellWidth: 40, halign: 'right' }
+                },
+                alternateRowStyles: {
+                    fillColor: [250, 250, 250]
+                },
+            });
+
+            // Add totals
+            const finalY = doc.lastAutoTable.finalY + 10;
+            const taxRate = parseFloat(document.getElementById('taxRate').value) || 0;
+            const subtotal = calculateSubtotal();
+            const tax = (subtotal * taxRate / 100).toFixed(2);
+            const total = (parseFloat(subtotal) + parseFloat(tax)).toFixed(2);
+
+            doc.setFontSize(10);
+            doc.setTextColor(secondaryColor[0], secondaryColor[1], secondaryColor[2]);
+            doc.text("Subtotal:", 140, finalY);
+            doc.text(`Tax (${taxRate}%):`, 140, finalY + 7);
+            doc.setFont("helvetica", "bold");
+            doc.setTextColor(primaryColor[0], primaryColor[1], primaryColor[2]);
+            doc.text("Total:", 140, finalY + 14);
+
+            doc.setFont("helvetica", "normal");
+            doc.setTextColor(0, 0, 0);
+            doc.text(`${currencySymbols[selectedCurrency]}${subtotal}`, 195, finalY, null, null, "right");
+            doc.text(`${currencySymbols[selectedCurrency]}${tax}`, 195, finalY + 7, null, null, "right");
+            doc.setFont("helvetica", "bold");
+            doc.setFontSize(12);
+            doc.setTextColor(primaryColor[0], primaryColor[1], primaryColor[2]);
+            doc.text(`${currencySymbols[selectedCurrency]}${total}`, 195, finalY + 14, null, null, "right");
+
+            // Add terms
+            const termsUrl = document.getElementById('termsConditions').value;
+            if (termsUrl) {
+                doc.setFont("helvetica", "bold");
+                doc.setFontSize(11);
+                doc.setTextColor(primaryColor[0], primaryColor[1], primaryColor[2]);
+                doc.text("Terms & Conditions:", 15, finalY + 30);
+                doc.setFont("helvetica", "normal");
+                doc.setFontSize(10);
+                doc.setTextColor(0, 0, 255);
+                doc.textWithLink("View Terms & Conditions", 15, finalY + 37, { url: termsUrl });
+            }
+
+            // Add thank you note
+            doc.setTextColor(primaryColor[0], primaryColor[1], primaryColor[2]);
+            doc.setFont("helvetica", "italic");
+            doc.setFontSize(12);
+            doc.text("Thank you for your business!", 105, finalY + 45, null, null, "center");
+
+            // Add footer with branding
+            doc.setFontSize(8);
+            doc.setTextColor(secondaryColor[0], secondaryColor[1], secondaryColor[2]);
+            doc.text("Generated using Billable Pro", 105, 285, null, null, "center");
+            doc.setTextColor(accentColor[0], accentColor[1], accentColor[2]);
+            doc.text("https://freeinvoicegenerator.com", 105, 290, null, null, "center");
+
+            // Save PDF
+            doc.save('invoice.pdf');
+        }
+
+        function updatePreview() {
+            document.getElementById('datePreview').textContent = document.getElementById('issueDate').value;
+
+            document.getElementById('fromNamePreview').textContent = document.getElementById('fromName').value || '';
+            document.getElementById('fromAddressPreview').textContent = document.getElementById('fromAddress').value || '';
+            document.getElementById('fromEmailPreview').textContent = document.getElementById('fromEmail').value || '';
+            document.getElementById('fromPhonePreview').textContent = document.getElementById('fromPhone').value || '';
+
+            document.getElementById('toNamePreview').textContent = document.getElementById('toName').value || '';
+            document.getElementById('toAddressPreview').textContent = document.getElementById('toAddress').value || '';
+            document.getElementById('toEmailPreview').textContent = document.getElementById('toEmail').value || '';
+
+            const itemsPreview = document.getElementById('itemsPreview');
+            itemsPreview.innerHTML = '';
+            items.forEach(item => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${item.description || ''}</td>
+                    <td>${item.quantity || '0'}</td>
+                    <td>${currencySymbols[selectedCurrency]}${item.price || '0.00'}</td>
+                    <td>${currencySymbols[selectedCurrency]}${item.total}</td>
+                `;
+                itemsPreview.appendChild(tr);
+            });
+
+            const taxRate = parseFloat(document.getElementById('taxRate').value) || 0;
+            const subtotal = calculateSubtotal();
+            const tax = (subtotal * taxRate / 100).toFixed(2);
+            const total = (parseFloat(subtotal) + parseFloat(tax)).toFixed(2);
+
+            document.getElementById('subtotalPreview').textContent = `${currencySymbols[selectedCurrency]}${subtotal}`;
+            document.getElementById('taxPreview').textContent = `${currencySymbols[selectedCurrency]}${tax}`;
+            document.getElementById('totalPreview').textContent = `${currencySymbols[selectedCurrency]}${total}`;
+
+            const termsUrl = document.getElementById('termsConditions').value;
+            document.getElementById('termsPreview').innerHTML = termsUrl ? `<a href="${termsUrl}" target="_blank">View Terms & Conditions</a>` : '';
+
+            document.getElementById('invoicePreview').style.display = 'block';
+            document.getElementById('invoicePreview').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        document.getElementById('fromPhone').addEventListener('input', function (e) {
+            let input = e.target;
+            let value = input.value;
+            value = value.replace(/[^\d+]/g, '');
+            if (value.lastIndexOf('+') > 0) {
+                value = value.slice(0, value.lastIndexOf('+')) + value.slice(value.lastIndexOf('+') + 1);
+            }
+            if (value.length > 12) {
+                value = value.slice(0, 15);
+            }
+            input.value = value;
+        });
+
+        function addItem() {
+            const item = { description: '', price: '', quantity: '', total: '0.00' };
+            items.push(item);
+            renderItems();
+        }
+
+        function removeItem(index) {
+            items.splice(index, 1);
+            if (items.length === 0) {
+                addItem();
+            }
+            renderItems();
+        }
+
+        function updateItem(index, field, value) {
+            items[index][field] = value;
+            if (field === 'price' || field === 'quantity') {
+                const price = parseFloat(items[index].price) || 0;
+                const quantity = parseFloat(items[index].quantity) || 0;
+                items[index].total = (price * quantity).toFixed(2);
+            }
+            renderItems();
+        }
+
+        function calculateSubtotal() {
+            return items.reduce((sum, item) => sum + (parseFloat(item.total) || 0), 0).toFixed(2);
+        }
+
+        function sanitizeInput(input) {
+            return input.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        }
+
+        function renderItems() {
+            const tbody = document.getElementById('itemsTableBody');
+            tbody.innerHTML = '';
+            items.forEach((item, index) => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td><input type="text" class="table-input" value="${sanitizeInput(item.description)}" onchange="updateItem(${index}, 'description', this.value)" placeholder="Description"></td>
+                    <td><input type="number" class="table-input" value="${sanitizeInput(item.price)}" onchange="updateItem(${index}, 'price', this.value)" placeholder="${currencySymbols[selectedCurrency]}0.00"></td>
+                    <td><input type="number" class="table-input" value="${sanitizeInput(item.quantity)}" onchange="updateItem(${index}, 'quantity', this.value)" placeholder="0"></td>
+                    <td>${currencySymbols[selectedCurrency]}${item.total}</td>
+                    <td><button class="delete-button" onclick="removeItem(${index})">🗑️ REMOVE</button></td>
+                    `;
+                tbody.appendChild(tr);
+            });
+            updateTaxAndTotal();
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize ad containers
+            const adSpaces = document.querySelectorAll('.ad-space');
+
+            // Function to check if element is in viewport
+            function isInViewport(element) {
+                const rect = element.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+
+            // Lazy load ads when they come into view
+            function lazyLoadAds() {
+                adSpaces.forEach(adSpace => {
+                    if (isInViewport(adSpace) && !adSpace.hasAttribute('data-loaded')) {
+                        adSpace.setAttribute('data-loaded', 'true');
+
+                        // Here you would normally initialize your Google Ad
+                        // Example Google AdSense code:
+                        /*
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                        */
+                    }
+                });
+            }
+
+            // Listen for scroll and resize events
+            ['scroll', 'resize'].forEach(evt =>
+                window.addEventListener(evt, lazyLoadAds, { passive: true })
+            );
+
+            // Initial check
+            lazyLoadAds();
+        });
+
+        // Ad refresh management
+        setInterval(() => {
+            if (typeof adsbygoogle !== 'undefined') {
+                document.querySelectorAll('.ad-space[data-loaded="true"]').forEach(adSpace => {
+                    if (isInViewport(adSpace)) {
+                        // Refresh visible ads
+                        // Implementation depends on your ad network
+                    }
+                });
+            }
+        }, 30000); // Refresh every 30 seconds
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+
+            menuToggle.addEventListener('click', function () {
+                navMenu.classList.toggle('active');
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function (e) {
+                if (!e.target.closest('.nav-container')) {
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

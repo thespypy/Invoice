@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billable Pro | Privacy Policy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="icon" href="/imgs/icon (6).png">
+   
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 5rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Faculty Glyphic", sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+            font-size: medium;
+            line-height: 1.5;
+
+        }
+
+        .inner a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+
+        .inner a:hover {
+            border-bottom: 2px solid #000;
+        }
+
+        hr {
+            margin-bottom: 20px;
+        }
+
+        header {
+            display: flex;
+            background-color: #000000;
+            justify-content: space-around;
+            align-items: center;
+            height: 5rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .logo {
+            display: flex;
+
+        }
+
+        header img {
+            width: 30px;
+            height: 30px;
+        }
+
+        header h1 {
+            color: white;
+            cursor: pointer;
+        }
+
+        header .nav a {
+            line-height: 1;
+            text-decoration: none;
+            margin: 10px;
+            color: white;
+            padding: 2px;
+        }
+
+        header .nav a:hover,
+        header .nav a:active {
+            border-bottom: 2px solid white;
+        }
+
+        header .nav a#contact {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            padding: 8px 25px;
+            border-radius: 30px;
+            text-transform: uppercase;
+        }
+
+        header .nav a#contact:hover {
+            transition: .3s ease-in-out;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+        }
+
+        header .toggle-btn {
+            color: #f0f0f0;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: none;
+        }
+
+        /* DROPDOWN MENU */
+        header .dropdown-menu {
+            display: none;
+            position: absolute;
+            right: 1.7rem;
+            top: 80px;
+            height: 0;
+            width: 300px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: #000000;
+            /* backdrop-filter : blur(15px); */
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            overflow: hidden;
+            transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        header .dropdown-menu.open {
+            height: 300px;
+        }
+
+        header .dropdown-menu li {
+            text-align: center;
+            list-style: none;
+            padding: 0.7rem;
+        }
+
+        header .dropdown-menu a {
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        header .dropdown-menu a {
+            display: block;
+        }
+
+        header li a#contact {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            padding: 8px 25px;
+            border-radius: 30px;
+            text-transform: uppercase;
+        }
+
+        header li a#contact:hover {
+            transition: .3s ease-in-out;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+        }
+
+        /* RESPONSIVE FOR HEADER */
+
+        @media(max-width: 480px) {
+            header .nav a {
+                display: none;
+            }
+
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            header .toggle-btn {
+                display: block;
+            }
+
+            header .dropdown-menu {
+                display: block;
+                width: unset;
+                left: 2rem;
+            }
+        }
+
+        .container {
+            margin-left: 1.5rem;
+            margin-right: 1.5rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        .inner {
+            margin: 1.5rem;
+        }
+
+        ul {
+            margin-left: 30px;
+            text-decoration: none;
+            color: #677788;
+            margin-bottom: 20px;
+            font-size: medium;
+            line-height: 1.6;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #677788;
+            margin-bottom: 20px;
+            font-size: medium;
+        }
+
+        .inner h1 {
+            margin-top: 20px;
+            color: #000;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            line-height: 1.6;
+            color: #000;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: medium;
+            color: #000;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            color: #333;
+            margin-top: 2rem;
+            text-align: center;
+            padding: 1rem;
+            background-color: #f0f0f0;
+        }
+
+        .footer-links {
+            margin-top: 1rem;
+        }
+
+        .footer-links a {
+            padding-bottom: 1px;
+            font-weight: 600;
+            margin: 0 0.5rem;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            border-bottom: 2px solid #333;
+        }
+
+        footer .p2 a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        footer .p2 a:hover {
+            border-bottom: 1px solid black;
+        }
+
+        footer .p2 {
+            margin-top: 1rem;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1>Free Invoice Generator</h1>
+            <img src="/imgs/icon (6).png" alt="logo" id="logo">
+        </div>
+        <div class="nav">
+            <a id="home" href="/index/index.html">Home</a>
+            <a id="createivc" href="/create-invoice/createinvoice.html">Create Invoice</a>
+            <a id="hiw" href="/how-it-works/howitworks.html">How it works</a>
+            <a id="testi" href="/testimonials/Testimonials.html">Testimonials</a>
+            <a id="fq" href="/faq/FAQ.html">FAQ</a>
+            <a id="contact" href="/contact/contact.html">Contact</a>
+        </div>
+
+        <div class="toggle-btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <div class="dropdown-menu">
+            <li><a id="home" href="/index/index.html">Home</a></li>
+            <li><a id="createivc" href="/create-invoice/createinvoice.html">Create Invoice</a></li>
+            <li><a id="hiw" href="/how-it-works/howitworks.html">How it works</a></li>
+            <li><a id="testi" href="/testimonials/Testimonials.html">Testimonials</a></li>
+            <li><a id="fq" href="/faq/FAQ.html">FAQ</a></li>
+            <li><a id="contact" href="/contact/contact.html">Contact</a></li>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="inner">
+            <h1>
+                Private Policy
+            </h1>
+            <p>
+                Last Updated: January 1, 2025
+            </p>
+            <hr>
+            <p>
+                This Privacy Policy applies to the websites: billable.pro (the “Sites”) owned and operated by
+                Billable.pro (collectively, “Invoice Generator”, “we”, “us”, or “our”). This Privacy Policy describes
+                how Invoice Generator collects, uses, shares and secures the personal information you provide, as well
+                as the human resources data transferred to us for processing on behalf of our customers. It also
+                describes your choices regarding use, access and correction of your personal information.
+            </p>
+
+            <h2>
+                Collection
+            </h2>
+            <p>
+                We may collect the following personal information from you:
+            </p>
+            <ul>
+                <li>Contact Information, such as name, email address, mailing address, or phone number;</li>
+                <li>Demographic information, such as age, education, gender, interests and zip code;</li>
+                <li>Billing Information, such as credit card number and billing address;</li>
+                <li>Unique Identifiers, such as username, account number or password;</li>
+                <li>Geo location based on IP address;</li>
+                <li>Information about your business, such as company name, company size, business type.</li>
+            </ul>
+            <p>
+                We may also collect, from you, personal information about your contacts such as name and email address
+                where we can send receipts of your purchases. When you provide us with personal information about your
+                contacts we will only use this information for the specific reason for which it is provided. If you
+                believe that one of your contacts has provided us with your personal information and you would like to
+                request that it be removed from our database, please contact us at the contact information below.
+            </p>
+            <p>
+                As is true of most websites, we gather certain information automatically. This information may include
+                Internet protocol (IP) addresses, browser type, Internet service provider (ISP), referring/exit pages,
+                the files viewed on our site (e.g., HTML pages, graphics, etc.), operating system, date/time stamp,
+                and/or clickstream data to analyze trends in the aggregate and administer the site.
+            </p>
+            <p>
+                Invoice Generator and its partners use cookies or similar technologies to analyze trends, administer the
+                website, track users’ movements around the website, and to gather demographic information about our user
+                base as a whole. You can control the use of cookies at the individual browser level, but if you choose
+                to disable cookies, it may limit your use of certain features or functions on our website or service.
+            </p>
+            <h2>
+                Use
+            </h2>
+            <h3>
+                1. With Third Parties:
+            </h3>
+            <p>
+                We may share your information with third-party business partners, for instance, for the purpose of
+                displaying advertisements or enhancing our products and services. If you do not want us to share your
+                personal information with these companies, then please opt-out on the Cookie Consent screen.
+            </p>
+            <p>
+                We use a third-party to provide monetization technologies for our site. You can review their privacy and
+                cookie policy
+                <a href="https://www.snigel.com/privacy-policy/" target="_blank" previewlistner="true">here</a>
+            </p>
+            <h3>
+                2. With Service Providers:
+            </h3>
+            <p>
+                We may share your information with third parties who provide services on our behalf to help with our
+                business activities. These companies are authorized to use your personal information only as necessary
+                to provide these services to us, to which these services may include:
+            </p>
+            <ul>
+                <li>Advertising</li>
+                <li>Payment processing</li>
+                <li>Providing customer service</li>
+                <li>Sending marketing communications</li>
+                <li>Conducting research and analysis</li>
+                <li>Providing cloud computing infrastructure</li>
+            </ul>
+            <h3>
+                3. With Public Authorities or Law Enforcement:
+            </h3>
+            <p>
+                In certain situations, Invoice Generator may be required to disclose personal data in response to lawful
+                requests by public authorities, including to meet national security or law enforcement requirements. We
+                may also disclose your personal information as required by law, such as to comply with a subpoena or
+                other legal process, when we believe in good faith that disclosure is necessary to protect our rights,
+                when we believe there is a violation to our Terms of Service (see Invoice Generator Terms of Service),
+                protect your safety or the safety of others, investigate fraud, or respond to a government request. If
+                Invoice Generator is involved in a merger, acquisition, or sale of all or a portion of its assets, you
+                will be notified via email and/or a prominent notice on our website, of any change in ownership, uses of
+                your personal information, and choices you may have regarding your personal information. We do not sell,
+                rent or share personal information with third parties without your prior consent.
+            </p>
+            <h2>
+                Security
+            </h2>
+            <p>
+                The security of your personal information is important to us. We follow generally accepted standards to
+                protect the personal information submitted to us, both during transmission and once it is received.
+                Invoice Generator ensures that all customer billing and payment information, files and data remain
+                private and confidential. Due to the sensitive nature of billing and payments we take this very
+                seriously and make it our primary concern for all customers. We restrict access to personal information
+                to Invoice Generator employees, contractors and agents who need to know that information in order to
+                operate, develop, or improve our service. These individuals are bound by confidentiality obligations and
+                may be subject to discipline, including termination and criminal prosecution, if they fail to meet these
+                obligations.
+            </p>
+            <p>
+                If you have any questions about the security of your personal information, you can contact us at the
+                contact information below. We may retain your information for as long as your account is active or as
+                needed to provide you services, comply with our legal obligations, resolve disputes and enforce our
+                agreements.
+            </p>
+            <h2>
+                Access
+            </h2>
+            <p>
+                Upon request Invoice Generator will provide you with information about whether we hold any of your
+                personal information. You may access, correct, or request deletion of your personal information by
+                logging into your account or by contacting us at the contact information below. We will respond to your
+                request within a reasonable timeframe. In certain circumstances we may be required by law to retain your
+                personal information, or may need to retain your personal information in order to continue providing a
+                service.
+            </p>
+            <p>
+                Invoice Generator acknowledges that you have the right to access your personal information. Invoice
+                Generator has no direct relationship with the individuals whose personal data it processes. An
+                individual who seeks access, or who seeks to correct, amend, or delete inaccurate data should direct
+                their query to the Invoice Generator’s Client (the data controller). If requested to remove data we will
+                respond within a reasonable timeframe. In certain circumstances we may be required by law to retain your
+                personal information, or may need to retain your personal information in order to continue providing a
+                service.
+            </p>
+            <h2>
+                Choice
+            </h2>
+            <p>
+                We partner with a third party to manage our advertising on other sites. Our third party partner may use
+                cookies or similar technologies in order to provide you advertising based upon your browsing activities
+                and interests. If you wish to opt out of interest-based advertising click <a
+                    href="http://preferences-mgr.truste.com/" target="_blank">here</a> (or if located in the European
+                Union click <a href="http://www.youronlinechoices.eu/" target="_blank">here</a>). Please note you will
+                continue to receive generic ads.
+            </p>
+            <p>
+                You may sign-up to receive email or newsletter or other communications from us. If you would like to
+                discontinue receiving this information, you may update your email preferences by using the “Unsubscribe”
+                link found in emails we send to you or by contacting us at the contact information below.
+            </p>
+            <h2>
+                Changes to This Privacy Policy
+            </h2>
+            <p>
+                We may update this Privacy Policy to reflect changes to our information practices. If we make any
+                material changes we will notify you by email (sent to the e-mail address specified in your account) or
+                by means of a notice on this website prior to the change becoming effective. We encourage you to
+                periodically review this page for the latest information on our privacy practices.
+            </p>
+            <h2>
+                Privacy Questions / Feedback
+            </h2>
+            <p>
+                If you have questions or concerns about Invoice Generator’s Privacy Policy please contact us at
+                privacy@billable.pro.
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Create professional invoices for free with our online invoice generator. Perfect for freelancers, small
+            businesses, and entrepreneurs.</p>
+        <nav class="footer-links">
+            <a href="/privacy-policy/private.html">Privacy Policy</a>
+            <a href="/terms/terms.html">Terms of Use</a>
+            <a href="/contact/contact.html">Contact Us</a>
+        </nav>
+        <p class="p2">© 2024 <a href="https://billable.pro/">Billable.pro</a></p>
+    </footer>
+
+    <script>
+        const toggleBtn = document.querySelector('.toggle-btn')
+        const toggleBtnIcon = document.querySelector('.toggle-btn i')
+        const dropDownMenu = document.querySelector('.dropdown-menu')
+
+        toggleBtn.onclick = function () {
+            dropDownMenu.classList.toggle('open')
+            const isOpen = dropDownMenu.classList.contains('open')
+
+            toggleBtnIcon.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+        }
+    </script>
+
+</body>
+
+</html>
