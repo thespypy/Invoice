@@ -4,10 +4,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Billable Pro | Home</title>
-    <link rel="icon" href="/imgs/icon (6).png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
+    <!-- SEO Meta Tags -->
+    <title>Free Invoice Generator | Create Professional Invoices Online</title>
+    <link rel="icon" href="imgs/icon (6).png">
+    <!-- <link rel="stylesheet" href="style.css">/ -->
+    <link rel="javascript" href="script.js">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Faculty+Glyphic&display=swap" rel="stylesheet"> -->
+
+    <meta name="description"
+        content="Generate professional invoices instantly with our free online tool. Easy-to-use, customizable templates, and instant PDF download. No registration required.">
+    <meta name="keywords"
+        content="free invoice generator, invoice maker, create invoice online, free invoice template, billing software, invoice generator, invoice creator">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:;">
+    <meta name="csrf-token" content="%= csrfToken %>">
+
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="Free Invoice Generator | Create Professional Invoices Online">
+    <meta property="og:description"
+        content="Generate professional invoices instantly with our free online tool. No registration required.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com">
+    <meta property="og:image" content="https://yourdomain.com/path-to-preview-image.jpg">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Invoice Generator">
+    <meta name="twitter:description" content="Create professional invoices for free online. No registration needed.">
+    <meta name="twitter:image" content="https://yourdomain.com/path-to-preview-image.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yourdomain.com">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Free Invoice Generator",
+      "description": "Create professional invoices online for free",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Custom invoice templates",
+        "PDF download",
+        "Multiple currency support",
+        "Tax calculation",
+        "Logo upload"
+      ]
+    }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
     <style>
         html {
             scroll-behavior: smooth;
