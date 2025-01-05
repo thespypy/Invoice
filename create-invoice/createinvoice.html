@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO Meta Tags -->
-    <title>Free Invoice Generator | Create Professional Invoices Online</title>
-    <link rel="icon" href="imgs/icon (6).png">
+    <title>Billable Pro | Create Professional Invoices Online</title>
+    <link rel="icon" href="/imgs/icon (6).png">
     <!-- <link rel="stylesheet" href="style.css">/ -->
     <link rel="javascript" href="script.js">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,7 +43,7 @@
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
-      "name": "Free Invoice Generator",
+      "name": "Billable Pro",
       "description": "Create professional invoices online for free",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Any",
@@ -122,7 +122,7 @@
         header div a:hover,
         header div a:active {
             /* text-decoration: underline; */
-            border-bottom: 2px solid white;
+            border-bottom: 1px solid white;
         }
 
         header div a#contact {
@@ -138,80 +138,6 @@
             background-color: #2563eb;
             color: white;
             border: none;
-        }
-
-        .page1 {
-            background-color: #ffffff;
-            color: rgb(0, 0, 0);
-            display: flex;
-            justify-content: space-around;
-            /* transform: translateY(100px); */
-            /* transition: all 1s ease-out; */
-            opacity: 0;
-            transition: opacity 1.5s ease-in-out;
-
-        }
-
-        .page1:hover {
-            opacity: 1;
-        }
-
-        .page1 .left {
-            height: 32rem;
-
-        }
-
-        .page1 .heading h1 {
-            margin-top: 3rem;
-            margin-left: 3rem;
-            /* font-family: Arial, Helvetica, sans-serif; */
-            font-size: 50px;
-            font-weight: bold;
-        }
-
-        .page1 .heading2 h4 {
-            margin-top: 1rem;
-            margin-left: 3rem;
-            width: 33rem;
-        }
-
-        .page1 .creatbtn {
-            margin-top: 2rem;
-            margin-left: 3rem;
-            background-color: #2e2e2e;
-            color: white;
-            cursor: pointer;
-            display: inline-block;
-            padding: 15px;
-            border-radius: 70px;
-        }
-
-        .page1 .creatbtn a {
-            text-decoration: none;
-            color: white;
-        }
-
-        .page1 .creatbtn:hover {
-            background-color: #000000;
-            transition: .1s ease-in-out;
-            box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-        }
-
-        .page1 .right {
-            margin-top: 5rem;
-        }
-
-        .page1 .right img {
-            box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-            border-radius: 30px;
-            margin-right: 3rem;
-            width: 500px;
-            height: 350px;
-        }
-
-        .visible {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         .header {
@@ -230,12 +156,12 @@
         }
 
         #createinvoice {
-            max-width: 900px;
+            max-width: 95%;
             margin: 0 auto;
             background-color: rgb(255, 255, 255);
             padding: 1.5rem;
             border-radius: 8px;
-            box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         .date-info {
@@ -404,11 +330,13 @@
             color: white;
             margin-top: 0.75rem;
         }
-
-        .total-display #totalAmount,
         #totalPreview {
             font-size: 1.5rem;
-            color: #fff;
+            color: #111;
+        }
+        #totalAmount, .total-display{
+            font-size: 1.5rem;
+            color: white;
         }
 
         .footer {
@@ -599,145 +527,6 @@
             }
         }
 
-        /* New styles for SEO improvements */
-        .faq-section {
-            margin: 1.5rem 0;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-section h2 {
-            /* animation: type 1.5s steps(90) 1.5s 1 normal both, cursor 1s step-end infinite; */
-            font-size: 2rem;
-            margin-top: 5rem;
-            color: #333;
-            text-align: center;
-            font-weight: 600;
-        }
-
-        .faq-section details {
-            margin-top: 2rem;
-            border: 1px solid #eee;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            background: white;
-        }
-
-        .faq-section details:hover {
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        }
-
-        .faq-section summary {
-            padding: 0.75rem 1rem;
-            cursor: pointer;
-            position: relative;
-            font-weight: 600;
-            font-size: 0.9rem;
-            color: #444;
-            background: #f8f9fa;
-            list-style: none;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .faq-section summary::after {
-            content: '+';
-            font-size: 1.2rem;
-            color: #666;
-            transition: transform 0.3s ease;
-        }
-
-        .faq-section details[open] summary::after {
-            transform: rotate(45deg);
-        }
-
-        .faq-section details p {
-            padding: 0.75rem 1rem;
-            margin: 0;
-            font-size: 0.85rem;
-            color: #666;
-            line-height: 1.5;
-            border-top: 1px solid #eee;
-        }
-
-        .faq-section p {
-            margin: 1rem auto;
-            font-size: 0.9rem;
-            color: hsl(220 8.9% 46.1%);
-            text-align: center;
-
-        }
-
-        .view a {
-            margin-left: 16px;
-            font-size: small;
-            color: hsl(220 8.9% 46.1%);
-            text-decoration: none;
-        }
-
-        .view a:hover {
-            color: hsl(222, 47%, 11%, 1);
-            /* border: 1px solid black; */
-            border-bottom: 2px solid black;
-        }
-
-        .button {
-            background-color: #2563eb;
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 500;
-            font-size: 0.9rem;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            box-shadow: 0 2px 4px rgba(37, 99, 235, 0.1);
-        }
-
-        .button:hover {
-            background-color: #1d4ed8;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
-        }
-
-        .button.outline {
-            background-color: transparent;
-            border: 2px solid #2563eb;
-            color: #2563eb;
-        }
-
-        .button.outline:hover {
-            background-color: #2563eb;
-            color: white;
-        }
-
-        .button-group {
-            display: flex;
-            gap: 0.75rem;
-            justify-content: center;
-            margin: 1rem 0;
-        }
-
-        @media (max-width: 768px) {
-            .button {
-                width: 100%;
-            }
-
-            .button-group {
-                flex-direction: column;
-            }
-
-            .faq-section {
-                padding: 0 1rem;
-            }
-        }
-
         footer {
             color: #333;
             margin-top: 2rem;
@@ -760,6 +549,13 @@
 
         .footer-links a:hover {
             border-bottom: 2px solid #333;
+        }
+        footer .p2 a{
+            text-decoration: none;
+            color: #333;
+        }
+        footer .p2 a:hover{
+            border-bottom: 1px solid black;
         }
 
         footer .p2 {
@@ -1158,36 +954,18 @@
     <header>
         <div class="logo">
             <h1>Free Invoice Generator</h1>
-            <img src="imgs/icon (6).png" alt="logo" id="logo">
+            <img src="/imgs/icon (6).png" alt="logo" id="logo">
         </div>
         <div>
-            <a id="home" href="index.html">Home</a>
-            <a id="createivc" href="createinvoice.html">Create Invoice</a>
-            <a id="hiw" href="howitworks.html">How it works</a>
-            <a id="testi" href="Testimonials.html">Testimonials</a>
-            <a id="fq" href="FAQ.html">FAQ</a>
-            <a id="contact" href="contact.html">Contact</a>
+            <a id="home" href="/index/index.html">Home</a>
+            <a id="createivc" href="/create-invoice/createinvoice.html">Create Invoice</a>
+            <a id="hiw" href="/how-it-works/howitworks.html">How it works</a>
+            <a id="testi" href="/testimonials/Testimonials.html">Testimonials</a>
+            <a id="fq" href="/faq/FAQ.html">FAQ</a>
+            <a id="contact" href="/contact/contact.html">Contact</a>
         </div>
         <!-- <p class="subtitle">Create professional invoices in seconds - No sign up required!</p> -->
     </header>
-    <div class="page1">
-        <div class="left">
-            <div class="heading">
-                <h1>Free Invoice <br> Generator - Online <br> Invoice Maker</h1>
-            </div>
-            <div class="heading2">
-                <h4>Welcome to the trusted Free Invoice Generator, used by millions. Instantly create professional
-                    invoices with our web-based templates. Send and pay invoices online or download them as PDFs.</h4>
-            </div>
-            <div class="creatbtn">
-                <a href="#createinvoice">Create Invoice</a>
-            </div>
-        </div>
-        <div class="right">
-            <img src="imgs/invoice img.jpg" alt="photo of invoice">
-        </div>
-    </div>
-
     <div class="container" id="createinvoice">
         <div class="header">
             <div class="logo-upload">
@@ -1283,9 +1061,6 @@
                     <label for="taxRate">Tax Rate (%)</label>
                     <input type="number" id="taxRate" min="0" max="100" step="0.1" value="0"
                         onchange="updateTaxAndTotal()">
-                    <label for="discount">Discount (%)</label>
-                    <input type="number" id="taxRate" min="0" max="100" step="0.1" value="0"
-                        onchange="updateTaxAndTotal()">
                 </div>
                 <div class="total-display">
                     Subtotal: <span id="subtotalAmount">0.00</span><br>
@@ -1369,89 +1144,18 @@
             </div>
         </div>
     </div>
-    <section class="faq-section">
-        <h2>Frequently Asked Questions</h2>
-        <p>Everything you need to know about the product and billing.</p>
-        <details>
-            <summary>Is this invoice generator really free?</summary>
-            <p>Yes, our invoice generator is completely free to use. There are no hidden charges or subscription fees.
-            </p>
-        </details>
-        <details>
-            <summary>Can I download my invoice as PDF?</summary>
-            <p>Yes, you can download your invoice as a professional PDF document with a single click.</p>
-        </details>
-        <details>
-            <summary>Do I need to create an account?</summary>
-            <p>No, you can create and download invoices instantly without any registration or account creation.</p>
-        </details>
-        <!-- <details>
-                <summary>Do I have the option to add discounts to my invoices?</summary>
-                <p>Yes, you can add discounts to your invoices. Simply press the discount link to add details, specifying the discount in percentage or currency amount, making it clear to your client.</p>
-            </details>
-            <details>
-                <summary>Is the free invoice generator customizable?</summary>
-                <p>We provide one template, but you can customize it by choosing the language, currency, and date format. This ensures your invoices meet the specific needs of your business and clients.</p>
-            </details>
-            <details>
-                <summary>Is there a limit to the number of invoices I can create?</summary>
-                <p>No, there is no limit to the number of invoices you can create. You can generate as many invoices as needed to support your business operations.</p>
-            </details>
-            <details>
-                <summary>Can I add additional fields to the invoice?</summary>
-                <p>No, our current template does not support additional fields, but we are continually improving and may add this feature in the future based on user feedback.</p>
-            </details>
-            <details>
-                <summary>How do I add my logo to my invoice?</summary>
-                <p>To add your logo, simply press the “Upload a logo” button and select the file from your computer. Your logo will then be added to your invoice template.</p>
-            </details>
-            <details>
-                <summary>Is my data safe?</summary>
-                <p>Yes, your data is safe with us. We use industry-standard security measures to protect your information and ensure it is only accessible by you.</p>
-            </details>
-            <details>
-                <summary>How to send an invoice?</summary>
-                <p>You can download the invoice as a PDF and send it via your preferred method.</p>
-            </details>
-            <details>
-                <summary>Can I change the currency?</summary>
-                <p>Yes, you can change the currency by selecting the currency option in the top right corner of the invoice generator. This allows you to bill clients in their preferred currency.</p>
-            </details>
-            <details>
-                <summary>Will there be any ads on the invoices?</summary>
-                <p>No, we do not add any ads to your invoices. Your invoices will remain professional and free from any advertisements.</p>
-            </details> -->
-        <div class="view">
-            <a href="FAQ.html">View More</a>
-        </div>
-    </section>
     <footer>
         <p>Create professional invoices for free with our online invoice generator. Perfect for freelancers, small
             businesses, and entrepreneurs.</p>
         <nav class="footer-links">
-            <a href="/privacy-policy">Privacy Policy</a>
-            <a href="/terms">Terms of Use</a>
-            <a href="contact.html">Contact Us</a>
+            <a href="/privacy-policy/private.html">Privacy Policy</a>
+            <a href="/terms/terms.html">Terms of Use</a>
+            <a href="/contact/contact.html">Contact Us</a>
         </nav>
-        <p class="p2">© 2024 Free Invoice Generator</p>
+        <p class="p2">© 2024 <a href="https://billable.pro/">Billable.pro</p>
     </footer>
+
     <script>
-
-        const animeText = document.querySelector('.page1');
-
-        const observer = new IntersectionObserver((entries) => {
-
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-                else {
-                    entry.target.classList.remove('visible')
-                }
-            });
-        });
-        observer.observe(animeText)
-
         let items = [];
         let logoImage = null;
         let selectedCurrency = 'USD';
@@ -1522,10 +1226,10 @@
             // Set document properties
             doc.setProperties({
                 title: 'Invoice',
-                subject: 'Invoice generated using Free Invoice Generator',
-                author: 'Free Invoice Generator',
+                subject: 'Invoice generated using Billable Pro',
+                author: 'Billable Pro',
                 keywords: 'invoice, free, generator',
-                creator: 'Free Invoice Generator'
+                creator: 'Billable Pro'
             });
 
             // Add logo if exists
@@ -1555,7 +1259,7 @@
             doc.setFontSize(10);
             doc.setTextColor(secondaryColor[0], secondaryColor[1], secondaryColor[2]);
             doc.setFont("helvetica", "normal");
-            doc.text("Generated by Free Invoice Generator", 200, 32, null, null, "right");
+            doc.text("Generated by Billable Pro", 200, 32, null, null, "right");
             doc.setTextColor(accentColor[0], accentColor[1], accentColor[2]);
             doc.text("https://freeinvoicegenerator.com", 200, 37, null, null, "right");
 
@@ -1685,7 +1389,7 @@
             // Add footer with branding
             doc.setFontSize(8);
             doc.setTextColor(secondaryColor[0], secondaryColor[1], secondaryColor[2]);
-            doc.text("Generated using Free Invoice Generator", 105, 285, null, null, "center");
+            doc.text("Generated using Billable Pro", 105, 285, null, null, "center");
             doc.setTextColor(accentColor[0], accentColor[1], accentColor[2]);
             doc.text("https://freeinvoicegenerator.com", 105, 290, null, null, "center");
 
@@ -1789,7 +1493,7 @@
                     <td><input type="number" class="table-input" value="${sanitizeInput(item.price)}" onchange="updateItem(${index}, 'price', this.value)" placeholder="${currencySymbols[selectedCurrency]}0.00"></td>
                     <td><input type="number" class="table-input" value="${sanitizeInput(item.quantity)}" onchange="updateItem(${index}, 'quantity', this.value)" placeholder="0"></td>
                     <td>${currencySymbols[selectedCurrency]}${item.total}</td>
-                    <td><button class="delete-button" onclick="removeItem(${index})">🗑️</button></td>
+                    <td><button class="delete-button" onclick="removeItem(${index})">🗑️ REMOVE</button></td>
                     `;
                 tbody.appendChild(tr);
             });
