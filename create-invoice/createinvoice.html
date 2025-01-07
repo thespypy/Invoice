@@ -77,14 +77,13 @@
         }
 
         body {
-            /* background-color: #f8f9fa;  */
-            /* padding: 1rem;  */
             font-size: medium;
             line-height: 1.5;
         }
 
 
         header {
+            overflow: hidden;
             display: flex;
             background-color: #000000;
             justify-content: space-around;
@@ -110,8 +109,7 @@
             cursor: pointer;
         }
 
-        header div a {
-            text-transform: bold;
+        header .nav a {
             line-height: 1;
             text-decoration: none;
             margin: 10px;
@@ -119,11 +117,11 @@
             padding: 2px;
         }
 
-        header div a:hover{
+        header .nav a:hover {
             border-bottom: 1px solid white;
         }
 
-        header div a#contact {
+        header .nav a#contact {
             background-color: #ffffff;
             color: rgb(0, 0, 0);
             padding: 8px 25px;
@@ -131,14 +129,105 @@
             text-transform: uppercase;
         }
 
-        header div a#contact:hover {
+        header .nav a#contact:hover {
             transition: .3s ease-in-out;
             background-color: #2563eb;
             color: white;
             border: none;
         }
-        header .nav a#createivc{
+
+        header .nav a#createivc {
             border-bottom: 1px solid white;
+        }
+
+        header .toggle-btn {
+            color: #f0f0f0;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: none;
+        }
+
+        /* DROPDOWN MENU */
+        header .dropdown-menu {
+            display: none;
+            position: absolute;
+            right: 1.7rem;
+            top: 80px;
+            height: 0;
+            width: 300px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: #000000;
+            /* backdrop-filter : blur(15px); */
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            overflow: hidden;
+            transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        header .dropdown-menu.open {
+            height: 300px;
+        }
+
+        header .dropdown-menu li {
+            text-align: center;
+            list-style: none;
+            padding: 0.7rem;
+        }
+
+        header .dropdown-menu a {
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        header .dropdown-menu a {
+            display: block;
+        }
+
+        header li a#contact {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            padding: 8px 25px;
+            border-radius: 30px;
+            text-transform: uppercase;
+        }
+
+        header li a#contact:hover {
+            transition: .3s ease-in-out;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+        }
+
+        /* RESPONSIVE FOR HEADER */
+
+        @media(max-width: 480px) {
+            header .nav a {
+                display: none;
+            }
+
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            header .toggle-btn {
+                display: block;
+            }
+
+            header .dropdown-menu {
+                display: block;
+                width: unset;
+                left: 2rem;
+            }
+        }
+
+        #createinvoice {
+            overflow: hidden;
+            width: 95%;
+            margin: 0 auto;
+            background-color: rgb(255, 255, 255);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         .header {
@@ -148,6 +237,12 @@
             border-bottom: 1px solid #eee;
         }
 
+        /* @media(max-width: 480px) {
+            #createinvoice {
+                margin-top: -3rem;
+            }
+        } */
+
         .header h1 {
             font-size: 2rem;
             font-weight: 700;
@@ -156,14 +251,6 @@
             letter-spacing: -0.5px;
         }
 
-        #createinvoice {
-            max-width: 95%;
-            margin: 0 auto;
-            background-color: rgb(255, 255, 255);
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
 
         .date-info {
             color: #666;
@@ -310,6 +397,7 @@
         }
 
         .total-section {
+            /* margin-right: 14rem; */
             background: #f8f9fa;
             padding: 1rem;
             border-radius: 8px;
@@ -331,11 +419,17 @@
             color: white;
             margin-top: 0.75rem;
         }
+     
+        .total-display{
+            padding-right: 14rem;
+        }
         #totalPreview {
             font-size: 1.5rem;
             color: #111;
         }
-        #totalAmount, .total-display{
+
+        #totalAmount,
+        .total-display {
             font-size: 1.5rem;
             color: white;
         }
@@ -397,74 +491,11 @@
             width: 180px;
         }
 
-        @media (max-width: 768px) {
-            .billing-info {
-                grid-template-columns: 1fr;
-                gap: 0.75rem;
-            }
-
-            .container {
-                padding: 1rem;
-            }
-
-            .total-display {
-                padding: 0.75rem;
-                font-size: 1.1rem;
-            }
-
-            .table-actions {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            table {
-                font-size: 14px;
-            }
-
-            td,
-            th {
-                padding: 0.5rem;
-            }
-
-            td:first-child {
-                width: 35%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 0.5rem;
-            }
-
-            .header h1 {
-                font-size: 1.75rem;
-            }
-
-            .button {
-                width: 100%;
-                margin-bottom: 0.5rem;
-            }
-
-            td:first-child {
-                width: 30%;
-            }
-
-            td:nth-child(2),
-            td:nth-child(3),
-            td:nth-child(4) {
-                width: 20%;
-            }
-
-            td:last-child {
-                width: 10%;
-            }
-        }
-
         #invoicePreview {
             background-color: white;
             padding: 30px;
             margin: 1rem auto;
-            max-width: 900px;
+            width: 900px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
@@ -501,31 +532,63 @@
         }
 
         .logo-preview {
-            max-width: 180px;
-            max-height: 90px;
+            width: 180px;
+            height: 90px;
             margin: 0.5rem 0;
         }
 
-        @media print {
-            body * {
-                visibility: hidden;
-            }
+        .view a {
+            margin-left: 16px;
+            font-size: small;
+            color: hsl(220 8.9% 46.1%);
+            text-decoration: none;
+        }
 
-            #invoicePreview,
-            #invoicePreview * {
-                visibility: visible;
-            }
+        .view a:hover {
+            color: hsl(222, 47%, 11%, 1);
+            /* border: 1px solid black; */
+            border-bottom: 2px solid black;
+        }
 
-            #invoicePreview {
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-            }
+        .button {
+            background-color: #2563eb;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            box-shadow: 0 2px 4px rgba(37, 99, 235, 0.1);
+        }
 
-            .no-print {
-                display: none;
-            }
+        .button:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
+        }
+
+        .button.outline {
+            background-color: transparent;
+            border: 2px solid #2563eb;
+            color: #2563eb;
+        }
+
+        .button.outline:hover {
+            background-color: #2563eb;
+            color: white;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+            margin: 1rem 0;
         }
 
         footer {
@@ -551,11 +614,13 @@
         .footer-links a:hover {
             border-bottom: 2px solid #333;
         }
-        footer .p2 a{
+
+        footer .p2 a {
             text-decoration: none;
             color: #333;
         }
-        footer .p2 a:hover{
+
+        footer .p2 a:hover {
             border-bottom: 1px solid black;
         }
 
@@ -658,7 +723,7 @@
         .ad-container {
             margin: 20px auto;
             text-align: center;
-            max-width: 100%;
+            width: 100%;
             overflow: hidden;
             background: #f9f9f9;
             border-radius: 4px;
@@ -684,13 +749,13 @@
 
         /* Top Banner Ad */
         .ad-banner-top {
-            max-width: 728px;
+            width: 728px;
             margin: 20px auto;
         }
 
         /* Native Ad */
         .ad-native {
-            max-width: 728px;
+            width: 728px;
             margin: 30px auto;
             background: white;
             border: 1px solid #eee;
@@ -710,37 +775,10 @@
 
         /* Middle Banner Ad */
         .ad-banner-middle {
-            max-width: 728px;
+            width: 728px;
             margin: 30px auto;
             background: white;
         }
-
-        /* Responsive Design */
-        @media (min-width: 1200px) {
-            .ad-sidebar {
-                display: block;
-                /* Show sidebar ad on desktop */
-            }
-
-            .container {
-                margin-right: 340px;
-                /* Make space for sidebar ad */
-            }
-        }
-
-        @media (max-width: 768px) {
-
-            .ad-banner-top,
-            .ad-banner-middle,
-            .ad-native {
-                max-width: 100%;
-            }
-
-            .ad-space {
-                min-height: 60px;
-            }
-        }
-
 
         /* Ad Loading Animation */
         .ad-space.loading {
@@ -818,18 +856,6 @@
             justify-content: center;
         }
 
-        /* Responsive adjustments */
-        @media (max-width: 480px) {
-            .button-group {
-                flex-direction: column;
-                gap: 0.75rem;
-            }
-
-            .button {
-                width: 100%;
-            }
-        }
-
         /* Reduced spacing and centered header */
         .header {
             text-align: center;
@@ -895,31 +921,10 @@
             margin-top: 0.75rem;
         }
 
-        .total-display {
-            padding: 1rem;
-            margin-top: 0.75rem;
-        }
-
         /* Footer adjustments */
         .footer {
             margin-top: 1.5rem;
             padding-top: 0.75rem;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
-            }
-
-            .header h1 {
-                font-size: 1.75rem;
-            }
-
-            .billing-info {
-                grid-template-columns: 1fr;
-                gap: 0.75rem;
-            }
         }
 
         /* Center align text elements */
@@ -932,21 +937,6 @@
         /* Ensure consistent spacing between sections */
         .section {
             margin-bottom: 1.25rem;
-        }
-
-        /* Tighter spacing for mobile */
-        @media (max-width: 480px) {
-            body {
-                padding: 0.5rem;
-            }
-
-            .container {
-                padding: 0.75rem;
-            }
-
-            .header {
-                margin-bottom: 1rem;
-            }
         }
     </style>
 </head>
@@ -1262,7 +1252,7 @@
             doc.setFont("helvetica", "normal");
             doc.text("Generated by Billable Pro", 200, 32, null, null, "right");
             doc.setTextColor(accentColor[0], accentColor[1], accentColor[2]);
-            doc.text("https://freeinvoicegenerator.com", 200, 37, null, null, "right");
+            doc.text("https://billable.pro", 200, 37, null, null, "right");
 
             // Add horizontal line
             doc.setDrawColor(accentColor[0], accentColor[1], accentColor[2]);
@@ -1392,7 +1382,7 @@
             doc.setTextColor(secondaryColor[0], secondaryColor[1], secondaryColor[2]);
             doc.text("Generated using Billable Pro", 105, 285, null, null, "center");
             doc.setTextColor(accentColor[0], accentColor[1], accentColor[2]);
-            doc.text("https://freeinvoicegenerator.com", 105, 290, null, null, "center");
+            doc.text("https://billable.pro", 105, 290, null, null, "center");
 
             // Save PDF
             doc.save('invoice.pdf');
