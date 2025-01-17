@@ -1,0 +1,1103 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Faculty Glyphic", sans-serif;
+}
+
+body {
+    font-size: medium;
+    line-height: 1.5;
+}
+
+
+header {
+    overflow: hidden;
+    display: flex;
+    background-color: #000000;
+    justify-content: space-around;
+    align-items: center;
+    height: 5rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo {
+    display: flex;
+
+}
+
+header img {
+    width: 30px;
+    height: 30px;
+}
+
+header h1 {
+    color: white;
+    cursor: pointer;
+}
+
+header .nav a {
+    line-height: 1;
+    text-decoration: none;
+    margin: 10px;
+    color: white;
+    padding: 2px;
+}
+
+header .nav a:hover,
+header .nav a:active {
+    border-bottom: 1px solid white;
+}
+header .nav a#home{
+    border-bottom: 1px solid white;
+}
+
+header .nav a#contact {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 8px 25px;
+    border-radius: 30px;
+    text-transform: uppercase;
+}
+
+header .nav a#contact:hover {
+    transition: .3s ease-in-out;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+}
+
+header .toggle-btn {
+    color: #f0f0f0;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+/* DROPDOWN MENU */
+header .dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 1.7rem;
+    top: 80px;
+    height: 0;
+    width: 300px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #000000;
+    /* backdrop-filter : blur(15px); */
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow: hidden;
+    transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+header .dropdown-menu.open {
+    height: 300px;
+}
+
+header .dropdown-menu li {
+    text-align: center;
+    list-style: none;
+    padding: 0.7rem;
+}
+
+header .dropdown-menu a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+header .dropdown-menu a {
+    display: block;
+}
+
+header li a#contact {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 8px 25px;
+    border-radius: 30px;
+    text-transform: uppercase;
+}
+
+header li a#contact:hover {
+    transition: .3s ease-in-out;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+}
+
+/* RESPONSIVE FOR HEADER */
+
+@media(max-width: 480px) {
+    header .nav a {
+        display: none;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    header .toggle-btn {
+        display: block;
+    }
+
+    header .dropdown-menu {
+        display: block;
+        width: unset;
+        left: 2rem;
+    }
+}
+
+@media(max-width: 768px) {
+    header .nav a {
+        display: none;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    /* header .toggle-btn {
+        display: block;
+    } */
+
+    header .dropdown-menu {
+        display: block;
+        width: unset;
+        left: 2rem;
+    }
+}
+
+@media(max-width: 1279px) {
+    header .nav a {
+        display: none;
+    }
+
+    /* header h1 {
+        font-size: 1.5rem;
+    } */
+
+    header .toggle-btn {
+        display: block;
+    }
+
+    header .dropdown-menu {
+        display: block;
+        width: unset;
+        left: 2rem;
+    }
+}
+
+.page1 {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: space-around;
+    /* transform: translateY(100px); */
+    /* transition: all 1s ease-out; */
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+
+}
+
+.page1:hover {
+    opacity: 1;
+}
+
+.page1 .left {
+    height: 32rem;
+
+}
+
+.page1 .heading h1 {
+    margin-top: 3rem;
+    margin-left: 3rem;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.page1 .heading2 h4 {
+    margin-top: 1rem;
+    margin-left: 3rem;
+    width: 80%;
+}
+
+.page1 .creatbtn {
+    margin-top: 2rem;
+    margin-left: 3rem;
+    background-color: #2e2e2e;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    padding: 15px;
+    border-radius: 70px;
+}
+
+.page1 .creatbtn a {
+    text-decoration: none;
+    color: white;
+}
+
+.page1 .creatbtn:hover {
+    background-color: #000000;
+    transition: .1s ease-in-out;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.page1 .right {
+    margin-top: 5rem;
+}
+
+.page1 .right img {
+    display: block;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    margin-right: 3rem;
+    width: 500px;
+    height: 350px;
+}
+
+@media(max-width: 480px) {
+    .page1 .heading h1 {
+        font-size: 2rem;
+    }
+
+    .page1 .right img {
+        display: none;
+    }
+}
+
+@media(max-width: 768px) {
+    /* .page1 .heading h1 {
+        font-size: 2rem;
+    } */
+
+    .page1 .right img {
+        display: none;
+    }
+}
+
+@media(max-width: 1279px) {
+    /* .page1 .heading h1 {
+        font-size: 2rem;
+    } */
+
+    .page1 .right img {
+        display: none;
+    }
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#createinvoice {
+    overflow: hidden;
+    width: 95%;
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+@media(max-width: 480px) {
+    #createinvoice {
+        margin-top: -3rem;
+    }
+}
+
+.header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+}
+
+
+.date-info {
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.billing-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.billing-section h2 {
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.input-group {
+    margin-bottom: 0.75rem;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 0.625rem;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    outline: none;
+    transition: all 0.2s ease;
+    background: #fff;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #111;
+    box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.1);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 50px;
+}
+
+@media(max-width: 480px) {
+    #createinvoice {
+        box-shadow: none;
+    }
+
+    .total-display,
+    .table-actions,
+    .table-responsive {
+        font-size: x-small;
+    }
+}
+
+/* Responsive table styles */
+.table-responsive {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #eee;
+}
+
+th {
+    background-color: #111;
+    color: white;
+    padding: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #eee;
+    background: white;
+}
+
+tr:hover td {
+    background-color: #fafafa;
+}
+
+td:first-child {
+    width: 40%;
+}
+
+td:nth-child(2),
+td:nth-child(3),
+td:nth-child(4) {
+    width: 15%;
+}
+
+td:last-child {
+    width: 10%;
+}
+
+.table-input {
+    background: transparent;
+    width: 100%;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.button {
+    background-color: #111;
+    color: white;
+    padding: 0.625rem 1.25rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 120px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+.button:hover {
+    background-color: #333;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.button.outline {
+    background-color: transparent;
+    border: 2px solid #111;
+    color: #111;
+}
+
+.button.outline:hover {
+    background-color: #111;
+    color: white;
+}
+
+.table-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.total-section {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    margin-top: 0.75rem;
+}
+
+.tax-settings {
+    background-color: #f9f9f9;
+    padding: 0.75rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+}
+
+.total-display {
+    background: #111;
+    padding: 1rem;
+    border-radius: 6px;
+    color: white;
+    margin-top: 0.75rem;
+}
+
+#totalPreview {
+    font-size: 1.5rem;
+    color: #111;
+}
+
+#totalAmount,
+.total-display {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 1.5rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #eee;
+}
+
+.footer p {
+    font-family: Georgia, serif;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.social-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    color: #111;
+}
+
+.delete-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #666;
+    padding: 0.5rem;
+}
+
+.delete-button:hover {
+    color: #111;
+}
+
+.terms-conditions {
+    margin: 1rem 0;
+}
+
+.terms-conditions input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    margin-top: 0.5rem;
+}
+
+.currency-selector {
+    margin: 0.5rem 0;
+    width: 180px;
+}
+
+#invoicePreview {
+    background-color: white;
+    padding: 30px;
+    margin: 1rem auto;
+    width: 900px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.invoice-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.invoice-title {
+    font-size: 2rem;
+    font-family: Georgia, serif;
+}
+
+.address-block {
+    margin-bottom: 1rem;
+}
+
+.address-block h3 {
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.thank-you-note {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.logo-upload {
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.logo-preview {
+    width: 180px;
+    height: 90px;
+    margin: 0.5rem 0;
+}
+
+/* New styles for SEO improvements */
+.faq-section {
+    margin: 1.5rem 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-section h2 {
+    /* animation: type 1.5s steps(90) 1.5s 1 normal both, cursor 1s step-end infinite; */
+    font-size: 2rem;
+    margin-top: 5rem;
+    color: #333;
+    text-align: center;
+    font-weight: 600;
+}
+
+.faq-section details {
+    margin-top: 2rem;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.faq-section details:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.faq-section summary {
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    position: relative;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #444;
+    background: #f8f9fa;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-section summary::after {
+    content: '+';
+    font-size: 1.2rem;
+    color: #666;
+    transition: transform 0.3s ease;
+}
+
+.faq-section details[open] summary::after {
+    transform: rotate(45deg);
+}
+
+.faq-section details p {
+    padding: 0.75rem 1rem;
+    margin: 0;
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.5;
+    border-top: 1px solid #eee;
+}
+
+.faq-section p {
+    margin: 1rem auto;
+    font-size: 0.9rem;
+    color: hsl(220 8.9% 46.1%);
+    text-align: center;
+
+}
+
+.view a {
+    margin-left: 16px;
+    font-size: small;
+    color: hsl(220 8.9% 46.1%);
+    text-decoration: none;
+}
+
+.view a:hover {
+    color: hsl(222, 47%, 11%, 1);
+    /* border: 1px solid black; */
+    border-bottom: 2px solid black;
+}
+
+.button {
+    background-color: #2563eb;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-shadow: 0 2px 4px rgba(37, 99, 235, 0.1);
+}
+
+.button:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
+}
+
+.button.outline {
+    background-color: transparent;
+    border: 2px solid #2563eb;
+    color: #2563eb;
+}
+
+.button.outline:hover {
+    background-color: #2563eb;
+    color: white;
+}
+
+.button-group {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+footer {
+    color: #333;
+    margin-top: 2rem;
+    text-align: center;
+    padding: 1rem;
+    background-color: #f0f0f0;
+}
+
+.footer-links {
+    margin-top: 1rem;
+}
+
+.footer-links a {
+    padding-bottom: 1px;
+    font-weight: 600;
+    margin: 0 0.5rem;
+    color: #333;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    border-bottom: 2px solid #333;
+}
+
+footer .p2 a {
+    text-decoration: none;
+    color: #333;
+}
+
+footer .p2 a:hover {
+    border-bottom: 1px solid black;
+}
+
+footer .p2 {
+    margin-top: 1rem;
+    color: #333;
+}
+
+
+/* Added CSS for invoice details */
+.invoice-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.invoice-details .input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.invoice-details label {
+    font-size: 0.875rem;
+    color: #666;
+    margin-bottom: 0.25rem;
+}
+
+.invoice-details input {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Add after header section (around line 366) */
+.ad-container.ad-banner-top {
+    margin-bottom: 2rem;
+}
+
+.ad-container.ad-banner-top .ad-label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.ad-container.ad-banner-top .ad-space {
+    background-color: #f0f0f0;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+/* Add before features section (around line 367) */
+.ad-container.ad-native {
+    margin-bottom: 2rem;
+}
+
+.ad-container.ad-native .ad-label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.ad-container.ad-native .ad-space {
+    background-color: #f0f0f0;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+/* Add after the invoice form, before FAQ section (around line 547) */
+.ad-container.ad-banner-middle {
+    margin-bottom: 2rem;
+}
+
+.ad-container.ad-banner-middle .ad-label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.ad-container.ad-banner-middle .ad-space {
+    background-color: #f0f0f0;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+/* Add floating sidebar ad (after container div) */
+.ad-container.ad-sidebar {
+    margin-top: 2rem;
+}
+
+.ad-container.ad-sidebar .ad-label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.ad-container.ad-sidebar .ad-space {
+    background-color: #f0f0f0;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+/* Ad Container Styles */
+.ad-container {
+    margin: 20px auto;
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+    background: #f9f9f9;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.ad-label {
+    font-size: 12px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 4px;
+    background: #eee;
+}
+
+.ad-space {
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+/* Top Banner Ad */
+.ad-banner-top {
+    width: 728px;
+    margin: 20px auto;
+}
+
+/* Native Ad */
+.ad-native {
+    width: 728px;
+    margin: 30px auto;
+    background: white;
+    border: 1px solid #eee;
+    padding: 15px;
+}
+
+/* Sidebar Ad */
+.ad-sidebar {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 300px;
+    display: none;
+    /* Hidden by default on mobile */
+}
+
+/* Middle Banner Ad */
+.ad-banner-middle {
+    width: 728px;
+    margin: 30px auto;
+    background: white;
+}
+
+/* Ad Loading Animation */
+.ad-space.loading {
+    background: linear-gradient(90deg, #f0f0f0 25%, #f8f8f8 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loadingAnimation 1.5s infinite;
+}
+
+@keyframes loadingAnimation {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Updated Button Styles */
+.button {
+    background-color: #111;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 120px;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: #333;
+    transform: translateY(-1px);
+}
+
+.button:active {
+    transform: translateY(0);
+}
+
+.button.outline {
+    background-color: transparent;
+    border: 1.5px solid #111;
+    color: #111;
+}
+
+.button.outline:hover {
+    background-color: #111;
+    color: white;
+}
+
+/* Button container styles */
+.footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+.footer p {
+    color: #666;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* Reduced spacing and centered header */
+.header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.header h1 {
+    font-size: 2rem;
+    /* Reduced font size */
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+}
+
+/* Reduced spacing in form elements */
+.billing-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    /* Reduced gap */
+    margin-bottom: 1rem;
+}
+
+.input-group {
+    margin-bottom: 0.75rem;
+    /* Reduced margin */
+}
+
+input,
+textarea,
+select {
+    padding: 0.625rem;
+    /* Reduced padding */
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+
+/* Tighter table spacing */
+table {
+    margin-bottom: 1rem;
+}
+
+th,
+td {
+    padding: 0.75rem;
+    /* Reduced padding */
+}
+
+/* Adjusted button sizes */
+.button {
+    padding: 0.625rem 1.25rem;
+    /* Reduced padding */
+    min-width: 120px;
+    /* Reduced min-width */
+}
+
+/* Tighter total section */
+.total-section {
+    padding: 1rem;
+    margin-top: 0.75rem;
+}
+
+.total-display {
+    padding: 1rem;
+    margin-top: 0.75rem;
+}
+
+/* Footer adjustments */
+.footer {
+    margin-top: 1.5rem;
+    padding-top: 0.75rem;
+}
+
+/* Center align text elements */
+.header p,
+.section-title,
+.total-section h3 {
+    text-align: center;
+}
+
+/* Ensure consistent spacing between sections */
+.section {
+    margin-bottom: 1.25rem;
+}
